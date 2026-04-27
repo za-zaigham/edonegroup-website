@@ -51,30 +51,17 @@ export function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
-  /* Nav link classes based on scroll state */
-  const navLink = scrolled
-    ? "text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)]"
-    : "text-white/80 hover:text-white hover:bg-white/10";
-
-  const chevronColor = scrolled ? "opacity-60" : "opacity-50";
+  /* Nav link classes — always white header */
+  const navLink = "text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)]";
+  const chevronColor = "opacity-60";
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-[0_1px_24px_rgba(9,9,11,0.08)] border-b border-[var(--color-border)]"
-          : "bg-[#05080F]/80 backdrop-blur-sm border-b border-white/8"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-[0_1px_24px_rgba(9,9,11,0.08)] border-b border-[var(--color-border)]">
       <div className="container-x flex items-center justify-between h-[68px]">
 
-        {/* Logo — white when unscrolled (dark hero), dark when scrolled */}
+        {/* Logo */}
         <Link href="/" className="flex items-center flex-shrink-0" aria-label="EdOne Group home">
-          {scrolled ? (
-            <Image src="/logo.png" alt="EdOne Group" width={130} height={36} className="h-9 w-auto" priority />
-          ) : (
-            <Image src="/logo-white.png" alt="EdOne Group" width={130} height={36} className="h-9 w-auto" priority />
-          )}
+          <Image src="/logo.png" alt="EdOne Group" width={130} height={36} className="h-9 w-auto" priority />
         </Link>
 
         {/* Desktop nav */}
@@ -190,11 +177,7 @@ export function Header() {
         <div className="flex items-center gap-2.5">
           <Link
             href="/book"
-            className={`hidden lg:inline-flex items-center px-4 py-2.5 text-sm font-semibold rounded-[var(--radius-md)] transition-all duration-150 ${
-              scrolled
-                ? "text-[var(--color-navy)] border border-[var(--color-border-strong)] hover:bg-[var(--color-surface-muted)]"
-                : "text-white border border-white/30 hover:bg-white/10"
-            }`}
+            className="hidden lg:inline-flex items-center whitespace-nowrap px-4 py-2.5 text-sm font-bold rounded-[var(--radius-md)] transition-all duration-150 text-[var(--color-blue)] border-2 border-[var(--color-blue)] hover:bg-[var(--color-blue)] hover:text-white"
           >
             Free Consultation
           </Link>
@@ -202,11 +185,7 @@ export function Header() {
             Apply Now
           </Link>
           <button
-            className={`lg:hidden p-2 rounded-lg transition-colors cursor-pointer ${
-              scrolled
-                ? "hover:bg-[var(--color-surface-muted)] text-[var(--color-navy)]"
-                : "hover:bg-white/10 text-white"
-            }`}
+            className="lg:hidden p-2 rounded-lg transition-colors cursor-pointer hover:bg-[var(--color-surface-muted)] text-[var(--color-navy)]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}

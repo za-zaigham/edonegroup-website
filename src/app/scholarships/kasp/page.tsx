@@ -88,7 +88,7 @@ export default function KASPPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[var(--color-text)] mb-4">EdOne Partner Universities in the UK</h2>
+              <h2 className="text-2xl font-bold text-[var(--color-text)] mb-4">UK Universities We Support Applications To</h2>
               <div className="flex flex-wrap gap-2">
                 {UK_UNIS.map((u) => (
                   <span key={u} className="px-3 py-1.5 text-sm rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)]">

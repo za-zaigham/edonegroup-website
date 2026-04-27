@@ -3,9 +3,9 @@ import Link from "next/link";
 import { queryDatabase, getTitle, getSelect, getRichText, getCheckbox, NOTION_DBS } from "@/lib/notion";
 
 export const metadata: Metadata = {
-  title: "Partner Universities — UK, Australia, Canada & More",
+  title: "Universities We Work With — UK, Australia, Canada & More",
   description:
-    "Browse EdOne Group's partner universities across the UK, Australia, Canada, USA, and Ireland. Filter by destination, tier, and intake.",
+    "Browse universities EdOne Group supports applications to across the UK, Australia, Canada, USA, and Ireland. Filter by destination, tier, and intake.",
 };
 
 function toSlug(name: string) {
@@ -75,13 +75,13 @@ export default async function UniversitiesPage() {
         <div className="container-x relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-sm text-indigo-300 font-medium mb-5">
             <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
-            {universities.length}+ Partner Universities
+            {universities.length}+ Universities
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-            Our Partner Universities
+            Universities We Work With
           </h1>
           <p className="text-lg text-white/60 max-w-xl mx-auto">
-            Direct partnerships mean faster decisions, better offers, and in many cases — scholarship access not available through other agents.
+            We support student applications to universities across the UK and beyond — helping you find the right fit and submit a strong application.
           </p>
         </div>
       </section>

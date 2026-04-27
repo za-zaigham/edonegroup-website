@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!uni) return { title: "University Not Found" };
     return {
       title: `${uni.name} — Study in ${uni.country}`,
-      description: `Apply to ${uni.name} through EdOne Group — ${uni.city}. ${uni.tier} institution with direct EdOne partnership.`,
+      description: `Apply to ${uni.name} through EdOne Group — ${uni.city}. ${uni.tier} institution. Free consultation and application support.`,
     };
   } catch {
     return { title: "University" };
@@ -188,7 +188,7 @@ export default async function UniversityDetailPage({ params }: { params: Promise
                 style={{ background: "linear-gradient(135deg, rgba(79,70,229,0.08), rgba(6,182,212,0.06))" }}>
                 <h3 className="font-bold text-[var(--color-text)] mb-2">Apply via EdOne</h3>
                 <p className="text-xs text-[var(--color-muted)] mb-5 leading-relaxed">
-                  We have a direct partnership with {uni.name}. Apply through us for faster decisions and scholarship access.
+                  We support applications to {uni.name}. Apply through EdOne for guided support from shortlisting to offer — at no cost to you.
                 </p>
                 <Link href="/apply"
                   className="block w-full py-3 px-4 rounded-xl font-bold text-white text-sm text-center transition-all"
@@ -205,9 +205,9 @@ export default async function UniversityDetailPage({ params }: { params: Promise
                 <div className="flex items-start gap-3">
                   <span className="text-xl">🎓</span>
                   <div>
-                    <div className="text-sm font-medium text-[var(--color-text)] mb-1">EdOne Partner</div>
+                    <div className="text-sm font-medium text-[var(--color-text)] mb-1">Free Application Support</div>
                     <div className="text-xs text-[var(--color-muted)]">
-                      Direct admissions relationship — no agent fees to you.
+                      EdOne guides your application end-to-end — no fees to you.
                     </div>
                   </div>
                 </div>

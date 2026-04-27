@@ -690,7 +690,7 @@ export default function Home() {
               {[
                 { n: "96%",  l: "Offer rate",           Icon: TrendingUp   },
                 { n: "40+",  l: "Countries served",     Icon: Globe        },
-                { n: "50+",  l: "Partner universities", Icon: Award        },
+                { n: "50+",  l: "Universities worldwide", Icon: Award        },
                 { n: "5",    l: "Study destinations",   Icon: GraduationCap },
               ].map(({ n, l, Icon }, i) => (
                 <ScrollReveal key={l} delay={i * 100} direction="scale">

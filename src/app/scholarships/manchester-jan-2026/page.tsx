@@ -109,7 +109,7 @@ export default function ManchesterJan2026Page() {
               <div className="p-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
                 <h3 className="font-bold text-[var(--color-text)] mb-3">Apply via EdOne</h3>
                 <p className="text-xs text-[var(--color-muted)] mb-5 leading-relaxed">
-                  EdOne has a direct partnership with the University of Manchester — faster processing and access to scholarship options not available through direct applications.
+                  EdOne supports applications to the University of Manchester — we guide you through the process and help identify scholarship options that suit your profile.
                 </p>
                 <Link href="/apply"
                   className="block w-full py-3 text-center rounded-xl font-bold text-white text-sm"

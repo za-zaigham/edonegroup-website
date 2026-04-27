@@ -16,7 +16,7 @@ const values = [
 const stats = [
   { n: "96%",  l: "Offer rate"           },
   { n: "40+",  l: "Countries served"     },
-  { n: "50+",  l: "Partner universities" },
+  { n: "50+",  l: "Universities worldwide" },
   { n: "5",    l: "Study destinations"   },
 ];
 

@@ -48,7 +48,7 @@ const scholarships = [
     slug: "manchester-jan-2026",
     flag: "🇬🇧",
     title: "University of Manchester — January 2026 Intake",
-    subtitle: "Direct Admission — EdOne Partner",
+    subtitle: "Apply via EdOne Group",
     tag: "New Intake",
     tagColor: "bg-indigo-600",
     deadline: "Applications close December 2025",
