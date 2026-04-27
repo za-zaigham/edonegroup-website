@@ -60,10 +60,10 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-[0_1px_24px_rgba(9,9,11,0.08)] border-b border-[var(--color-border)]"
-          : "bg-transparent border-b border-transparent"
+          : "bg-[#05080F]/80 backdrop-blur-sm border-b border-white/8"
       }`}
     >
       <div className="container-x flex items-center justify-between h-[68px]">

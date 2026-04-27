@@ -133,7 +133,8 @@ export default function RootLayout({
         }}
       >
         <Header />
-        <main className="flex-1 pb-20 md:pb-0">{children}</main>
+        {/* pt-[68px] reserves space for the fixed 68px header so content isn't hidden underneath */}
+        <main className="flex-1 pt-[68px] pb-20 md:pb-0">{children}</main>
         <Footer />
         <StickyMobileBar />
       </body>
