@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Poppins, Inter, Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -15,6 +15,13 @@ const poppins = Poppins({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const notoKufiArabic = Noto_Kufi_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -39,7 +46,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${poppins.variable} ${inter.variable} h-full antialiased`}>
+    <html lang="en-GB" className={`${poppins.variable} ${inter.variable} ${notoKufiArabic.variable} h-full antialiased`}>
       <body
         className="min-h-full flex flex-col bg-[var(--color-bg)] text-[var(--color-text)]"
         style={{

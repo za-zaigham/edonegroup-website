@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Study in Canada — Universities, PGWP & Visa Guide",
-  description: "Study in Canada: top universities, 3-year Post-Graduate Work Permit, pathway to permanent residency, and how EdOne gets you an offer.",
+  title: "Study in Canada — Universities, PGWP & Student Route Guide",
+  description: "Study in Canada: top universities, 3-year Post-Graduate Work Permit, clear PR pathway, and how EdOne gets you an offer.",
 };
 
 const topUnis = [
@@ -17,10 +17,10 @@ const topUnis = [
 
 const whyCanada = [
   { icon: "🛂", title: "3-year work permit (PGWP)", desc: "Graduates from eligible programmes get a Post-Graduate Work Permit for up to 3 years — work anywhere in Canada." },
-  { icon: "🏠", title: "Pathway to permanent residency", desc: "Express Entry and Provincial Nominee Programs actively reward Canadian study and work experience for PR applications." },
+  { icon: "🏠", title: "Clear PR pathway", desc: "Express Entry and Provincial Nominee Programs actively reward Canadian study and work experience for permanent residency applications." },
   { icon: "🎓", title: "3 world top-50 universities", desc: "U of T, UBC, and McGill rank among the world's best. Degrees are globally recognised, especially in the US." },
-  { icon: "🤝", title: "Bilingual advantage", desc: "French-English bilingualism opens doors across the world. Quebec offers unique immigration pathways for French speakers." },
-  { icon: "🌨️", title: "Safe, welcoming country", desc: "Canada consistently ranks as one of the safest, most welcoming countries for international students and immigrants." },
+  { icon: "🤝", title: "Bilingual advantage", desc: "French-English bilingualism opens doors across the world. Quebec offers unique graduate stay-back pathways for French speakers." },
+  { icon: "🌨️", title: "Safe, welcoming country", desc: "Canada consistently ranks as one of the safest, most welcoming countries for international students and global professionals." },
   { icon: "💰", title: "Lower fees than the US", desc: "Top-tier education at significantly lower tuition than comparable US universities — and living costs outside Toronto/Vancouver are very affordable." },
 ];
 

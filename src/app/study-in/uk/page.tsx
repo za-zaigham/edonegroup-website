@@ -17,10 +17,10 @@ const topUnis = [
 
 const visaSteps = [
   { n: "01", t: "Get your university offer", d: "Apply through UCAS or directly. You need an unconditional offer before you can apply for a Student visa." },
-  { n: "02", t: "Receive your CAS number", d: "Your university sends a Confirmation of Acceptance for Studies (CAS). This is required for your visa application." },
-  { n: "03", t: "Apply for Student visa", d: "Apply online up to 6 months before your course starts. You'll need IELTS, bank statements, and a TB test (for some countries)." },
-  { n: "04", t: "Arrive and enrol", d: "Collect your BRP card within 10 days of arrival. Attend university induction and enrol on your programme." },
-  { n: "05", t: "Graduate Route after study", d: "After graduating, switch to the 2-year Graduate Route (or 3 years for PhD) to work anywhere in the UK." },
+  { n: "02", t: "Receive your CAS number", d: "Your university sends a Confirmation of Acceptance for Studies (CAS). This is required for your Student Route application." },
+  { n: "03", t: "Apply for your Student visa", d: "Apply online up to 6 months before your course starts. You'll need IELTS (or equivalent), bank statements, and a TB test if required for your country." },
+  { n: "04", t: "Arrive and set up your eVisa", d: "Since January 2025, UK visas are fully digital. You'll access your immigration status through the UKVI online account — no physical card issued." },
+  { n: "05", t: "Graduate Route after study", d: "After graduating, switch to the 2-year Graduate Route (3 years for PhD) to work anywhere in the UK. No job offer required." },
 ];
 
 const whyUK = [

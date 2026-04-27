@@ -15,10 +15,18 @@ const destinations = [
 
 const services = [
   { label: "University Applications", Icon: GraduationCap, href: "/services", note: "End-to-end support" },
-  { label: "UK 2nd Master's", Icon: BookOpen, href: "/services/uk-2nd-masters", note: "Graduate Route visa" },
+  { label: "UK 2nd Master's", Icon: BookOpen, href: "/services/uk-2nd-masters", note: "Graduate Route" },
   { label: "Research + Dependants", Icon: Users, href: "/services/uk-research-dependants", note: "Bring your family" },
-  { label: "Visa Guidance", Icon: FileText, href: "/services#visa", note: "CAS to BRP" },
+  { label: "Student Route Support", Icon: FileText, href: "/services#visa", note: "CAS to eVisa" },
   { label: "Scholarship Search", Icon: Award, href: "/services#scholarships", note: "Funded opportunities" },
+];
+
+const gulfStudents = [
+  { label: "Saudi Students", flag: "🇸🇦", href: "/gulf/saudi-arabia", note: "KASP & Aramco scholarships" },
+  { label: "UAE Students", flag: "🇦🇪", href: "/gulf/uae", note: "Ministry & ADEK scholarships" },
+  { label: "Qatari Students", flag: "🇶🇦", href: "/gulf/qatar", note: "QF & MOHESR scholarships" },
+  { label: "Kuwaiti Students", flag: "🇰🇼", href: "/gulf/kuwait", note: "KCO full scholarship" },
+  { label: "Omani Students", flag: "🇴🇲", href: "/gulf/oman", note: "MoHE & PDO scholarships" },
 ];
 
 export function Header() {
@@ -26,8 +34,10 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [destOpen, setDestOpen] = useState(false);
   const [servOpen, setServOpen] = useState(false);
+  const [gulfOpen, setGulfOpen] = useState(false);
   const [mobileDestOpen, setMobileDestOpen] = useState(false);
   const [mobileServOpen, setMobileServOpen] = useState(false);
+  const [mobileGulfOpen, setMobileGulfOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -119,6 +129,38 @@ export function Header() {
             </div>
           </div>
 
+          {/* Gulf Students */}
+          <div className="relative" onMouseEnter={() => setGulfOpen(true)} onMouseLeave={() => setGulfOpen(false)}>
+            <button
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-all duration-150 cursor-pointer"
+              aria-expanded={gulfOpen}
+              aria-haspopup="true"
+            >
+              <Globe size={15} className="opacity-70" />
+              Gulf Students
+              <ChevronDown size={14} className={`transition-transform duration-200 opacity-70 ${gulfOpen ? "rotate-180" : ""}`} />
+            </button>
+            <div className={`absolute top-full left-0 mt-1.5 w-72 transition-all duration-200 ${gulfOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
+              <div className="bg-white rounded-2xl shadow-[var(--shadow-xl)] border border-[var(--color-border)] p-2">
+                {gulfStudents.map((g) => (
+                  <Link key={g.href} href={g.href}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--color-surface-muted)] transition-colors group"
+                    onClick={() => setGulfOpen(false)}
+                  >
+                    <span className="text-xl leading-none">{g.flag}</span>
+                    <div>
+                      <div className="text-sm font-semibold text-[var(--color-navy)] group-hover:text-[var(--color-blue)] transition-colors">{g.label}</div>
+                      <div className="text-xs text-[var(--color-text-subtle)] mt-0.5">{g.note}</div>
+                    </div>
+                  </Link>
+                ))}
+                <div className="mx-3 mt-1 mb-1 pt-2 border-t border-[var(--color-border)]">
+                  <span className="text-[0.68rem] font-semibold uppercase tracking-widest text-[var(--color-text-subtle)]">Bilingual EN · عربي pages</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <Link href="/universities" className="px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-all duration-150">
             Universities
           </Link>
@@ -195,6 +237,29 @@ export function Header() {
                   <div>
                     <div className="text-sm font-medium text-[var(--color-navy)]">{label}</div>
                     <div className="text-xs text-[var(--color-text-subtle)]">{note}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {/* Gulf Students mobile accordion */}
+          <button
+            className="w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-[var(--color-surface-muted)] transition-colors text-sm font-semibold text-[var(--color-navy)] cursor-pointer"
+            onClick={() => setMobileGulfOpen(!mobileGulfOpen)}
+          >
+            <span className="flex items-center gap-2"><Globe size={16} /> Gulf Students</span>
+            <ChevronDown size={16} className={`transition-transform duration-200 ${mobileGulfOpen ? "rotate-180" : ""}`} />
+          </button>
+          {mobileGulfOpen && (
+            <div className="pl-4 space-y-0.5">
+              {gulfStudents.map((g) => (
+                <Link key={g.href} href={g.href} onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-[var(--color-surface-muted)] transition-colors">
+                  <span className="text-xl">{g.flag}</span>
+                  <div>
+                    <div className="text-sm font-medium text-[var(--color-navy)]">{g.label}</div>
+                    <div className="text-xs text-[var(--color-text-subtle)]">{g.note}</div>
                   </div>
                 </Link>
               ))}

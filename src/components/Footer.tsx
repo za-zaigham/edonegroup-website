@@ -44,6 +44,14 @@ export function Footer() {
             <li><Link href="/study-in/usa" className="hover:text-white transition">🇺🇸 United States</Link></li>
             <li><Link href="/study-in/ireland" className="hover:text-white transition">🇮🇪 Ireland</Link></li>
           </ul>
+          <h4 className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-3 mt-6">Gulf Students · طلاب الخليج</h4>
+          <ul className="space-y-2.5 text-sm text-white/70">
+            <li><Link href="/gulf/saudi-arabia" className="hover:text-white transition">🇸🇦 Saudi Arabia</Link></li>
+            <li><Link href="/gulf/uae" className="hover:text-white transition">🇦🇪 UAE</Link></li>
+            <li><Link href="/gulf/qatar" className="hover:text-white transition">🇶🇦 Qatar</Link></li>
+            <li><Link href="/gulf/kuwait" className="hover:text-white transition">🇰🇼 Kuwait</Link></li>
+            <li><Link href="/gulf/oman" className="hover:text-white transition">🇴🇲 Oman</Link></li>
+          </ul>
         </div>
 
         {/* Contact */}
@@ -71,8 +79,6 @@ export function Footer() {
             <Link href="/legal/privacy" className="hover:text-white/70 transition">Privacy Policy</Link>
             <Link href="/legal/terms" className="hover:text-white/70 transition">Terms of Service</Link>
             <Link href="/legal/cookies" className="hover:text-white/70 transition">Cookies</Link>
-            <span>ICO: pending</span>
-            <span>Companies House: pending</span>
           </div>
         </div>
       </div>

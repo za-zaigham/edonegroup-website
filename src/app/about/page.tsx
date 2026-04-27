@@ -14,10 +14,10 @@ const values = [
 ];
 
 const stats = [
-  { n: "2,000+", l: "Students placed" },
-  { n: "96%", l: "Offer rate" },
-  { n: "40+", l: "Countries served" },
-  { n: "50+", l: "Partner universities" },
+  { n: "96%",  l: "Offer rate"           },
+  { n: "40+",  l: "Countries served"     },
+  { n: "50+",  l: "Partner universities" },
+  { n: "5",    l: "Study destinations"   },
 ];
 
 export default function AboutPage() {
