@@ -42,11 +42,90 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://edonegroup.com/#organization",
+      "name": "EdOne Group",
+      "url": "https://edonegroup.com",
+      "logo": "https://edonegroup.com/logo.png",
+      "description":
+        "UK-based education consultancy helping students from 40+ countries secure university offers worldwide.",
+      "email": "hello@edonegroup.com",
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "UK University Admissions",
+        "International Student Visa",
+        "Postgraduate Admissions",
+        "Scholarship Guidance",
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/edonegroup",
+        "https://www.instagram.com/edonegroup",
+        "https://wa.me/447000000000",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://edonegroup.com/#website",
+      "url": "https://edonegroup.com",
+      "name": "EdOne Group",
+      "publisher": { "@id": "https://edonegroup.com/#organization" },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://edonegroup.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the consultation with EdOne Group really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Initial consultations are completely free with no obligation. EdOne Group earns commission from universities upon successful enrolment, so there is no upfront cost to students.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Can I study in the UK without IELTS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Several UK universities accept PTE Academic, Duolingo English Test, or a university-run pre-sessional English course instead of IELTS.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bring my family (dependants) when studying in the UK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many research-track and postgraduate programmes allow eligible dependants (spouse and children under 18). Eligibility depends on your specific visa route and course type.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Which countries does EdOne Group support students from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EdOne Group serves students from 40+ countries including Pakistan, India, Nigeria, Bangladesh, Saudi Arabia, UAE, Qatar, Kuwait, Oman, and Sri Lanka.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB" className={`${poppins.variable} ${inter.variable} ${notoKufiArabic.variable} h-full antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+        />
+      </head>
       <body
         className="min-h-full flex flex-col bg-[var(--color-bg)] text-[var(--color-text)]"
         style={{

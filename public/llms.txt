@@ -1,0 +1,56 @@
+# EdOne Group — AI-readable site map
+# https://edonegroup.com/llms.txt
+
+## About
+EdOne Group is a UK-based education consultancy that helps students from 40+ countries secure university offers in the UK, Australia, Canada, USA, and Ireland. We specialise in UK postgraduate admissions, including second Master's degrees and research programmes that allow dependants.
+
+## Key pages
+
+### Home
+- URL: https://edonegroup.com/
+- Description: Overview of services, destinations, latest scholarship opportunities, and Gulf student support.
+
+### Apply
+- URL: https://edonegroup.com/apply
+- Description: Application form for students wishing to start their university journey. Free — no hidden fees.
+
+### Book a Free Consultation
+- URL: https://edonegroup.com/book
+- Description: Schedule a free 1-to-1 counselling session with an EdOne adviser.
+
+### About EdOne Group
+- URL: https://edonegroup.com/about
+- Description: Our story, mission, team, and ethos as an education consultancy.
+
+### Contact
+- URL: https://edonegroup.com/contact
+- Description: WhatsApp, email, and phone contact options. FAQs about the admissions process.
+
+## Services
+- /services — full overview of all services
+- /services/uk-2nd-masters — Second Master's degree route in the UK (for students who already hold an MSc/MA)
+- /services/uk-research-dependants — Research-track postgraduate programmes that permit dependants (spouse + children)
+
+## Study Destinations
+- /study-in/uk — Study in the United Kingdom: universities, entry requirements, funding, and student route visa overview
+- /study-in/australia — Study in Australia: universities, PSW visa, IELTS requirements
+- /study-in/canada — Study in Canada: universities, PGWP, SPP stream
+- /study-in/usa — Study in the United States: universities, F-1 visa, GRE/GMAT
+- /study-in/ireland — Study in Ireland: universities, Stay Back visa, EU-benchmark fees
+
+## Gulf Students (bilingual EN/AR pages)
+- /gulf/saudi-arabia — KASP, Aramco, and Chevening scholarships; UK universities for Saudi students
+- /gulf/uae — Ministry of Education UAE, ADEK, and Chevening scholarships
+- /gulf/qatar — Qatar Foundation, MOHESR, Chevening
+- /gulf/kuwait — Kuwait Cultural Office (KCO) scholarship; KPC; Chevening
+- /gulf/oman — Ministry of Higher Education Oman, PDO, Chevening
+
+## Legal
+- /legal/privacy — Privacy Policy (UK GDPR compliant)
+- /legal/terms — Terms of Service
+- /legal/cookies — Cookie Policy
+- /legal/refund — Refund Policy
+
+## Contact
+- Email: hello@edonegroup.com
+- WhatsApp: https://wa.me/447000000000
