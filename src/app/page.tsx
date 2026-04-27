@@ -1,91 +1,70 @@
 import Link from "next/link";
+import {
+  ArrowRight, Star, CheckCircle2, Globe, GraduationCap,
+  FileText, Users, BookOpen, Award, MessageCircle, Phone,
+  TrendingUp, Shield, Clock, ChevronRight
+} from "lucide-react";
 import { FAQ } from "@/components/FAQ";
-
-/* ── Hero visual — floating student result cards ── */
-const heroResults = [
-  { flag: "🇬🇧", name: "Aisha R.", uni: "University of Manchester", field: "MSc Data Science" },
-  { flag: "🇦🇺", name: "Omar K.", uni: "University of Melbourne", field: "MBA" },
-  { flag: "🇨🇦", name: "Priya S.", uni: "University of Toronto", field: "MSc Finance" },
-];
 
 /* ── Destinations ── */
 const destinations = [
-  { name: "United Kingdom", flag: "🇬🇧", slug: "uk", note: "2-yr Graduate Route visa", color: "#DBEAFE" },
-  { name: "Australia", flag: "🇦🇺", slug: "australia", note: "Up to 5-yr regional PSW", color: "#D1FAE5" },
-  { name: "Canada", flag: "🇨🇦", slug: "canada", note: "3-yr Post-Grad Work Permit", color: "#FEF3C7" },
-  { name: "United States", flag: "🇺🇸", slug: "usa", note: "STEM OPT extension", color: "#FCE7F3" },
-  { name: "Ireland", flag: "🇮🇪", slug: "ireland", note: "2-yr stayback visa", color: "#E0E7FF" },
+  { name: "United Kingdom", flag: "🇬🇧", slug: "uk", note: "2-yr Graduate Route", highlight: true },
+  { name: "Australia", flag: "🇦🇺", slug: "australia", note: "Up to 5-yr PSW" },
+  { name: "Canada", flag: "🇨🇦", slug: "canada", note: "3-yr PGWP" },
+  { name: "United States", flag: "🇺🇸", slug: "usa", note: "STEM OPT" },
+  { name: "Ireland", flag: "🇮🇪", slug: "ireland", note: "2-yr stayback" },
+];
+
+/* ── Marquee universities ── */
+const universities = [
+  "University of Manchester", "University of Birmingham", "University of Leeds",
+  "Monash University", "University of Toronto", "University College Dublin",
+  "University of Edinburgh", "Queen Mary University", "Brunel University",
+  "Coventry University", "RMIT University", "McGill University",
+  "York University", "University of Sheffield", "Deakin University",
+];
+
+/* ── Steps ── */
+const steps = [
+  { n: "01", Icon: MessageCircle, title: "Free Consultation", desc: "30-min call to map your goals, profile, visa status, and ideal outcomes. Zero pressure, zero cost." },
+  { n: "02", Icon: GraduationCap, title: "Personalised Shortlist", desc: "We hand-pick 3–5 universities genuinely matched to your profile — not our commission rate." },
+  { n: "03", Icon: FileText, title: "Application & Visa", desc: "End-to-end: personal statement, documents, CAS, visa filing, interview prep. We own every step." },
+  { n: "04", Icon: Globe, title: "Arrival & Beyond", desc: "Accommodation, airport pickup, SIM, bank account setup. We stay with you after you land." },
 ];
 
 /* ── Testimonials ── */
 const testimonials = [
   {
-    name: "Fatima Al-Hassan",
-    from: "🇵🇰 Pakistan",
-    to: "University of Birmingham",
-    course: "MSc Computer Science",
-    quote:
-      "EdOne found me a course that kept my Graduate Route active AND matched my career goals. I'd applied to 3 universities on my own with no luck — they got me an offer in 6 weeks.",
-    initials: "FA",
-    color: "#DBEAFE",
+    name: "Fatima Al-Hassan", from: "Pakistan", to: "University of Birmingham",
+    course: "MSc Computer Science", initials: "FA", color: "#DBEAFE",
+    quote: "EdOne found me a course that kept my Graduate Route active AND matched my career goals. I'd applied to 3 universities on my own with no luck — they got me an offer in 6 weeks.",
   },
   {
-    name: "Kwame Asante",
-    from: "🇬🇭 Ghana",
-    to: "University of Leeds",
-    course: "MRes Biomedical Sciences",
-    quote:
-      "My biggest worry was bringing my wife and daughter. EdOne knew exactly which research routes still allow dependants. They handled everything — visa, accommodation, the works.",
-    initials: "KA",
-    color: "#D1FAE5",
+    name: "Kwame Asante", from: "Ghana", to: "University of Leeds",
+    course: "MRes Biomedical Sciences", initials: "KA", color: "#D1FAE5",
+    quote: "My biggest worry was bringing my wife and daughter. EdOne knew exactly which research routes still allow dependants. They handled everything — visa, accommodation, the works.",
   },
   {
-    name: "Mei-Ling Chen",
-    from: "🇨🇳 China",
-    to: "Monash University",
-    course: "Master of Finance",
-    quote:
-      "Honest, fast, and no pressure. They told me upfront which universities were realistic for my GPA and which weren't. Got into my first choice. Couldn't recommend more.",
-    initials: "MC",
-    color: "#FEF3C7",
+    name: "Mei-Ling Chen", from: "China", to: "Monash University",
+    course: "Master of Finance", initials: "MC", color: "#FEF3C7",
+    quote: "Honest, fast, and no pressure. They told me upfront which universities were realistic for my GPA and which weren't. Got into my first choice. Couldn't recommend more.",
   },
-];
-
-/* ── Partner universities (text-based — replace with logos when available) ── */
-const universities = [
-  "University of Manchester", "University of Birmingham", "University of Leeds",
-  "Monash University", "University of Toronto", "University College Dublin",
-  "University of Edinburgh", "Queen Mary University", "Brunel University",
-  "Coventry University",
 ];
 
 /* ── Services ── */
 const services = [
-  {
-    icon: "🎓",
-    title: "University Applications",
-    desc: "From shortlist to offer letter — we manage every step of your application across UK, Australia, Canada, USA, and Ireland.",
-    href: "/services",
-  },
-  {
-    icon: "📋",
-    title: "Visa Guidance",
-    desc: "CAS to BRP. We stay current on UKVI rules so you don't have to. Student visa, dependant visa, Graduate Route — all covered.",
-    href: "/services#visa",
-  },
-  {
-    icon: "📚",
-    title: "UK 2nd Master's",
-    desc: "Stay on the Graduate Route, switch fields, or stack qualifications. We find the right fit — not the easiest one.",
-    href: "/services/uk-2nd-masters",
-  },
-  {
-    icon: "👨‍👩‍👧",
-    title: "Research + Dependants",
-    desc: "MRes, MPhil, and PhD routes that still allow your spouse and children to join you under post-January 2024 UK rules.",
-    href: "/services/uk-research-dependants",
-  },
+  { Icon: GraduationCap, title: "University Applications", desc: "From shortlist to offer letter — end-to-end across UK, Australia, Canada, USA, and Ireland.", href: "/services", color: "blue" },
+  { Icon: FileText, title: "Visa Guidance", desc: "CAS to BRP. Current on all UKVI rules. Student visa, dependant visa, Graduate Route — all covered.", href: "/services#visa", color: "navy" },
+  { Icon: BookOpen, title: "UK 2nd Master's", desc: "Stay on the Graduate Route, switch fields, or stack qualifications. We find the right fit.", href: "/services/uk-2nd-masters", color: "action" },
+  { Icon: Users, title: "Research + Dependants", desc: "MRes, MPhil, PhD routes that let your spouse and children join you under post-2024 UK rules.", href: "/services/uk-research-dependants", color: "success" },
 ];
+
+const serviceColors: Record<string, string> = {
+  blue:   "bg-[var(--color-blue-subtle)] text-[var(--color-blue)]",
+  navy:   "bg-[var(--color-navy)] text-white",
+  action: "bg-[var(--color-action-soft)] text-[var(--color-action)]",
+  success:"bg-[var(--color-success-soft)] text-[var(--color-success)]",
+};
 
 export default function Home() {
   return (
@@ -94,105 +73,134 @@ export default function Home() {
           HERO
       ══════════════════════════════════════════ */}
       <section className="relative overflow-hidden hero-gradient">
-        {/* Subtle background grid */}
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{ backgroundImage: "radial-gradient(circle, #1E40AF 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+        {/* Subtle dot grid */}
+        <div className="absolute inset-0 opacity-[0.025]"
+          style={{ backgroundImage: "radial-gradient(circle, #0369A1 1.5px, transparent 1.5px)", backgroundSize: "28px 28px" }}
+          aria-hidden="true"
         />
 
-        <div className="container-x relative py-20 md:py-28 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="container-x relative pt-16 pb-20 md:pt-20 md:pb-28">
+          <div className="grid lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-center">
 
-            {/* LEFT — copy */}
-            <div className="max-w-xl">
-              <div className="section-pill mb-6">
-                <span>🇬🇧</span> UK&apos;s Trusted Education Consultancy
+            {/* LEFT */}
+            <div className="max-w-2xl">
+              {/* Pill */}
+              <div className="section-pill mb-6 w-fit">
+                <Shield size={13} />
+                UK&apos;s Trusted Education Consultancy
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] font-bold text-[var(--color-navy)] leading-[1.1]">
+              {/* Headline */}
+              <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[3.75rem] font-extrabold text-[var(--color-navy)] leading-[1.08] tracking-tight">
                 Get Into Your Dream University —{" "}
                 <span className="text-[var(--color-blue)]">Without the Guesswork.</span>
               </h1>
 
-              <p className="mt-5 text-[1.0625rem] text-[var(--color-text-muted)] leading-relaxed max-w-lg">
-                We&apos;ve helped 2,000+ students from 40 countries secure offers at top universities
-                in the UK, Australia, Canada, USA, and Ireland. Free consultation. No pressure.
+              <p className="mt-5 text-lg text-[var(--color-text-muted)] leading-relaxed max-w-lg font-normal" style={{ fontFamily: "var(--font-inter)" }}>
+                We&apos;ve helped <strong className="text-[var(--color-navy)] font-semibold">2,000+ students</strong> from 40 countries secure offers at top universities in the UK, Australia, Canada, USA, and Ireland.
               </p>
 
+              {/* CTAs */}
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/book" className="btn btn-primary text-base px-6 py-3.5">
-                  Book a Free Consultation →
+                <Link href="/book" className="btn btn-primary gap-2">
+                  Book Free Consultation
+                  <ArrowRight size={17} />
                 </Link>
-                <Link href="/reviews" className="btn btn-secondary text-base px-6 py-3.5">
+                <Link href="/reviews" className="btn btn-secondary gap-2">
                   See Student Results
+                  <ChevronRight size={16} />
                 </Link>
               </div>
 
-              {/* Trust stats */}
-              <div className="mt-10 flex flex-wrap gap-6 pt-8 border-t border-[var(--color-border)]">
+              {/* Trust bar */}
+              <div className="mt-10 pt-8 border-t border-[var(--color-border)] grid grid-cols-3 gap-4">
                 {[
                   { n: "2,000+", l: "Students Placed" },
                   { n: "96%", l: "Offer Rate" },
-                  { n: "4.9 / 5", l: "Google Rating" },
+                  { n: "4.9★", l: "Google Rating" },
                 ].map((s) => (
                   <div key={s.l}>
-                    <div className="text-2xl font-bold text-[var(--color-navy)] tracking-tight">{s.n}</div>
-                    <div className="text-xs text-[var(--color-text-subtle)] font-medium mt-0.5">{s.l}</div>
+                    <div className="stat-number">{s.n}</div>
+                    <div className="text-xs text-[var(--color-text-subtle)] font-medium mt-1" style={{ fontFamily: "var(--font-inter)" }}>{s.l}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* RIGHT — floating results card */}
-            <div className="relative hidden lg:block">
-              <div className="relative rounded-3xl navy-gradient p-7 shadow-[var(--shadow-xl)]">
+            <div className="relative hidden lg:block" aria-hidden="true">
+              {/* Glow effects */}
+              <div className="absolute -top-8 -right-8 w-56 h-56 rounded-full bg-[var(--color-blue)] opacity-[0.07] blur-3xl" />
+              <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-[var(--color-action)] opacity-[0.06] blur-2xl" />
 
-                {/* Rating badge */}
-                <div className="flex items-center gap-2.5 bg-white/10 rounded-2xl px-4 py-2.5 w-fit mb-6">
+              <div className="relative rounded-3xl navy-gradient p-7 shadow-[var(--shadow-xl)]">
+                {/* Rating */}
+                <div className="flex items-center gap-2.5 bg-white/10 rounded-2xl px-4 py-2.5 w-fit mb-6 backdrop-blur-sm">
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                      </svg>
+                      <Star key={i} size={13} fill="#FBBF24" stroke="none" />
                     ))}
                   </div>
-                  <span className="text-white font-semibold text-sm">4.9</span>
-                  <span className="text-white/60 text-sm">· 200+ reviews</span>
+                  <span className="text-white font-semibold text-sm">4.9 / 5</span>
+                  <span className="text-white/50 text-xs">· 200+ reviews</span>
                 </div>
 
                 {/* Recent results */}
-                <div className="space-y-3 mb-6">
-                  {heroResults.map((r) => (
-                    <div key={r.name} className="bg-white rounded-2xl p-4 flex items-center gap-3">
-                      <span className="text-2xl">{r.flag}</span>
+                <div className="space-y-2.5 mb-6">
+                  {[
+                    { flag: "🇵🇰", name: "Aisha R.", uni: "Univ. of Manchester", course: "MSc Data Science" },
+                    { flag: "🇬🇭", name: "Kwame A.", uni: "Univ. of Leeds", course: "MRes Biomedical Sci." },
+                    { flag: "🇨🇳", name: "Mei-Ling C.", uni: "Monash University", course: "Master of Finance" },
+                  ].map((r) => (
+                    <div key={r.name} className="bg-white rounded-2xl p-3.5 flex items-center gap-3 shadow-sm">
+                      <span className="text-2xl leading-none flex-shrink-0">{r.flag}</span>
                       <div className="flex-1 min-w-0">
                         <div className="font-semibold text-[var(--color-navy)] text-sm truncate">{r.name}</div>
                         <div className="text-xs text-[var(--color-text-muted)] truncate">{r.uni}</div>
-                        <div className="text-xs text-[var(--color-text-subtle)] truncate">{r.field}</div>
+                        <div className="text-xs text-[var(--color-text-subtle)] truncate">{r.course}</div>
                       </div>
-                      <span className="flex-shrink-0 bg-[var(--color-success-soft)] text-[var(--color-success)] text-xs font-bold px-2.5 py-1 rounded-full">
-                        Offer ✓
-                      </span>
+                      <div className="flex items-center gap-1 bg-[var(--color-success-soft)] text-[var(--color-success)] text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0">
+                        <CheckCircle2 size={11} />
+                        Offer
+                      </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Bottom stats */}
+                {/* Stats */}
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-white/10 rounded-2xl p-4 text-white text-center">
-                    <div className="text-2xl font-bold">2,000+</div>
+                  <div className="bg-white/10 rounded-2xl p-4 text-white text-center backdrop-blur-sm">
+                    <div className="text-2xl font-extrabold tracking-tight">2,000+</div>
                     <div className="text-xs text-white/60 mt-1">Students Placed</div>
                   </div>
-                  <div className="bg-white/10 rounded-2xl p-4 text-white text-center">
-                    <div className="text-2xl font-bold">40+</div>
-                    <div className="text-xs text-white/60 mt-1">Countries Served</div>
+                  <div className="bg-white/10 rounded-2xl p-4 text-white text-center backdrop-blur-sm">
+                    <div className="text-2xl font-extrabold tracking-tight">40+</div>
+                    <div className="text-xs text-white/60 mt-1">Countries</div>
                   </div>
                 </div>
               </div>
-
-              {/* Decorative glow */}
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 rounded-full bg-[var(--color-blue)] opacity-10 blur-3xl -z-10" />
-              <div className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-[var(--color-action)] opacity-10 blur-2xl -z-10" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          UNIVERSITY MARQUEE
+      ══════════════════════════════════════════ */}
+      <section className="py-10 bg-white border-y border-[var(--color-border)] overflow-hidden">
+        <div className="container-x mb-5">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-text-subtle)]">
+            Our students have secured offers at
+          </p>
+        </div>
+        <div className="relative overflow-hidden">
+          <div className="marquee-track">
+            {[...universities, ...universities].map((u, i) => (
+              <div key={i} className="flex items-center gap-8 px-5">
+                <span className="whitespace-nowrap text-sm font-semibold text-[var(--color-navy-muted)] opacity-60 hover:opacity-100 transition-opacity cursor-default">{u}</span>
+                <span className="w-1 h-1 rounded-full bg-[var(--color-border-strong)] flex-shrink-0" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -200,28 +208,34 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           DESTINATIONS
       ══════════════════════════════════════════ */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[var(--color-surface-muted)]">
         <div className="container-x">
           <div className="text-center mb-12">
-            <div className="section-pill mx-auto mb-4">Where do you want to study?</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-navy)]">
+            <div className="section-pill mx-auto mb-4 w-fit">
+              <Globe size={13} />
               Choose your destination
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)]">
+              Where do you want to study?
             </h2>
-            <p className="mt-3 text-[var(--color-text-muted)] max-w-xl mx-auto">
-              We have specialist knowledge in every major English-speaking study destination — with up-to-date visa guidance for each.
+            <p className="mt-3 text-[var(--color-text-muted)] max-w-lg mx-auto" style={{ fontFamily: "var(--font-inter)" }}>
+              Specialist knowledge in every major English-speaking study destination — with up-to-date visa guidance for each.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {destinations.map((d) => (
-              <Link
-                key={d.slug}
-                href={`/study-in/${d.slug}`}
-                className="card card-lift group p-6 text-center"
+              <Link key={d.slug} href={`/study-in/${d.slug}`}
+                className={`card card-lift p-6 text-center group block ${d.highlight ? "border-[var(--color-blue-soft)] bg-[var(--color-blue-subtle)]" : ""}`}
               >
-                <div className="text-4xl mb-3">{d.flag}</div>
-                <div className="font-semibold text-[var(--color-navy)] text-sm group-hover:text-[var(--color-blue)] transition">{d.name}</div>
+                <div className="text-4xl mb-3 leading-none">{d.flag}</div>
+                <div className="font-semibold text-[var(--color-navy)] text-sm group-hover:text-[var(--color-blue)] transition-colors">{d.name}</div>
                 <div className="text-xs text-[var(--color-text-subtle)] mt-1.5 leading-snug">{d.note}</div>
+                {d.highlight && (
+                  <div className="mt-2.5 inline-flex items-center gap-1 text-xs font-semibold text-[var(--color-blue)]">
+                    <TrendingUp size={11} /> Most popular
+                  </div>
+                )}
               </Link>
             ))}
           </div>
@@ -231,35 +245,31 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           HOW IT WORKS
       ══════════════════════════════════════════ */}
-      <section className="py-20 bg-[var(--color-surface-muted)]">
+      <section className="py-20 bg-white">
         <div className="container-x">
           <div className="text-center mb-14">
-            <div className="section-pill mx-auto mb-4">Simple process</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-navy)]">
-              How EdOne works
-            </h2>
-            <p className="mt-3 text-[var(--color-text-muted)] max-w-xl mx-auto">
-              From first conversation to university offer — we handle everything, you focus on your future.
+            <div className="section-pill mx-auto mb-4 w-fit">
+              <CheckCircle2 size={13} />
+              Simple process
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)]">How EdOne works</h2>
+            <p className="mt-3 text-[var(--color-text-muted)] max-w-lg mx-auto" style={{ fontFamily: "var(--font-inter)" }}>
+              From first conversation to offer letter — we handle everything so you can focus on your future.
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6 relative">
-            {/* Connector line on desktop */}
-            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[var(--color-border-strong)] to-transparent" />
+            {/* Connector line */}
+            <div className="hidden md:block absolute top-[2.75rem] left-[calc(12.5%+1.5rem)] right-[calc(12.5%+1.5rem)] h-px bg-gradient-to-r from-[var(--color-border)] via-[var(--color-border-strong)] to-[var(--color-border)]" aria-hidden="true" />
 
-            {[
-              { n: "01", t: "Free Consultation", d: "30-minute call to map your goals, profile, visa status, and ideal outcomes. Zero pressure.", icon: "💬" },
-              { n: "02", t: "Personalised Shortlist", d: "We hand-pick 3–5 universities genuinely matched to your profile — not our commission.", icon: "🎯" },
-              { n: "03", t: "Application & Visa", d: "End-to-end: personal statement, docs, CAS, visa filing, interview prep. We own every step.", icon: "📋" },
-              { n: "04", t: "Arrival & Beyond", d: "Accommodation advice, airport pickup, SIM card, bank account setup. We stay with you.", icon: "🏠" },
-            ].map((s, i) => (
-              <div key={s.n} className="relative bg-white rounded-2xl p-6 border border-[var(--color-border)] shadow-[var(--shadow-sm)] text-center">
-                <div className="w-12 h-12 rounded-2xl bg-[var(--color-blue-subtle)] flex items-center justify-center text-2xl mx-auto mb-4">
-                  {s.icon}
+            {steps.map(({ n, Icon, title, desc }) => (
+              <div key={n} className="relative text-center group">
+                <div className="w-14 h-14 rounded-2xl bg-[var(--color-navy)] flex items-center justify-center mx-auto mb-5 shadow-[var(--shadow-md)] group-hover:bg-[var(--color-blue)] transition-colors duration-200">
+                  <Icon size={24} className="text-white" />
                 </div>
-                <div className="text-xs font-mono font-bold text-[var(--color-blue)] mb-2 tracking-widest">{s.n}</div>
-                <h3 className="font-bold text-[var(--color-navy)] mb-2">{s.t}</h3>
-                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">{s.d}</p>
+                <div className="text-[0.7rem] font-bold text-[var(--color-action)] tracking-[0.15em] font-mono mb-2">{n}</div>
+                <h3 className="font-bold text-[var(--color-navy)] mb-2 text-[0.9375rem]">{title}</h3>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -269,13 +279,14 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           TESTIMONIALS
       ══════════════════════════════════════════ */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[var(--color-surface-muted)]">
         <div className="container-x">
           <div className="text-center mb-12">
-            <div className="section-pill mx-auto mb-4">Real results</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-navy)]">
-              What our students say
-            </h2>
+            <div className="section-pill mx-auto mb-4 w-fit">
+              <Star size={13} fill="currentColor" />
+              Real results
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)]">What our students say</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -283,30 +294,28 @@ export default function Home() {
               <div key={t.name} className="card p-7 flex flex-col gap-5">
                 {/* Stars */}
                 <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={15} fill="#FBBF24" stroke="none" />)}
                 </div>
 
-                {/* Quote */}
-                <p className="text-[0.9375rem] text-[var(--color-text-muted)] leading-relaxed flex-1">
-                  &ldquo;{t.quote}&rdquo;
+                {/* Quote mark (SVG, not emoji) */}
+                <svg width="28" height="20" viewBox="0 0 28 20" fill="none" aria-hidden="true" className="-mb-2">
+                  <path d="M0 20V12.5C0 5.596 4.167 1.25 12.5 0l1.5 2.5C9.833 3.333 7.5 6.167 7.5 10H12.5V20H0ZM15.5 20V12.5C15.5 5.596 19.667 1.25 28 0l1.5 2.5C25.333 3.333 23 6.167 23 10H28V20H15.5Z" fill="#E2E8F0"/>
+                </svg>
+
+                <p className="text-[0.9375rem] text-[var(--color-text-muted)] leading-relaxed flex-1" style={{ fontFamily: "var(--font-inter)" }}>
+                  {t.quote}
                 </p>
 
-                {/* Student */}
+                {/* Student info */}
                 <div className="flex items-center gap-3 pt-4 border-t border-[var(--color-border)]">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-[var(--color-navy)] flex-shrink-0"
-                    style={{ background: t.color }}
-                  >
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-[var(--color-navy)] flex-shrink-0"
+                    style={{ background: t.color }}>
                     {t.initials}
                   </div>
                   <div>
                     <div className="font-semibold text-[var(--color-navy)] text-sm">{t.name}</div>
-                    <div className="text-xs text-[var(--color-text-subtle)]">{t.from} → {t.to}</div>
-                    <div className="text-xs text-[var(--color-blue)] font-medium">{t.course}</div>
+                    <div className="text-xs text-[var(--color-text-subtle)]">From {t.from} → {t.to}</div>
+                    <div className="text-xs text-[var(--color-blue)] font-medium mt-0.5">{t.course}</div>
                   </div>
                 </div>
               </div>
@@ -314,30 +323,10 @@ export default function Home() {
           </div>
 
           <div className="mt-8 text-center">
-            <Link href="/reviews" className="btn btn-secondary px-6 py-3">
-              Read all student stories →
+            <Link href="/reviews" className="btn btn-secondary gap-2 px-6 py-3">
+              Read all student stories
+              <ArrowRight size={16} />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-          UNIVERSITY LOGOS
-      ══════════════════════════════════════════ */}
-      <section className="py-14 bg-[var(--color-surface-muted)] border-y border-[var(--color-border)]">
-        <div className="container-x">
-          <p className="text-center text-xs font-semibold uppercase tracking-widest text-[var(--color-text-subtle)] mb-8">
-            Our students have secured offers at
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {universities.map((u) => (
-              <span
-                key={u}
-                className="px-4 py-2 rounded-full bg-white border border-[var(--color-border)] text-sm font-medium text-[var(--color-text-muted)] shadow-[var(--shadow-xs)]"
-              >
-                {u}
-              </span>
-            ))}
           </div>
         </div>
       </section>
@@ -348,29 +337,32 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container-x">
           <div className="text-center mb-12">
-            <div className="section-pill mx-auto mb-4">What we do</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-navy)]">
-              End-to-end university support
-            </h2>
-            <p className="mt-3 text-[var(--color-text-muted)] max-w-xl mx-auto">
-              From first application to landing in your new country — we cover every step.
+            <div className="section-pill mx-auto mb-4 w-fit">
+              <Award size={13} />
+              What we do
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)]">End-to-end university support</h2>
+            <p className="mt-3 text-[var(--color-text-muted)] max-w-lg mx-auto" style={{ fontFamily: "var(--font-inter)" }}>
+              From first application to landing in your new country — every step covered.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {services.map((s) => (
-              <Link
-                key={s.title}
-                href={s.href}
-                className="card card-lift group p-7"
+            {services.map(({ Icon, title, desc, href, color }) => (
+              <Link key={title} href={href}
+                className="card card-lift group p-7 flex flex-col"
               >
-                <div className="text-3xl mb-4">{s.icon}</div>
-                <h3 className="font-bold text-[var(--color-navy)] mb-2 group-hover:text-[var(--color-blue)] transition">
-                  {s.title}
+                <div className={`icon-wrap w-12 h-12 mb-5 ${serviceColors[color]}`}>
+                  <Icon size={22} />
+                </div>
+                <h3 className="font-bold text-[var(--color-navy)] mb-2 text-[0.9375rem] group-hover:text-[var(--color-blue)] transition-colors">
+                  {title}
                 </h3>
-                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">{s.desc}</p>
-                <div className="mt-5 text-sm font-semibold text-[var(--color-blue)] flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Learn more <span>→</span>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed flex-1" style={{ fontFamily: "var(--font-inter)" }}>
+                  {desc}
+                </p>
+                <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-[var(--color-blue)] group-hover:gap-2.5 transition-all">
+                  Learn more <ArrowRight size={15} />
                 </div>
               </Link>
             ))}
@@ -384,46 +376,52 @@ export default function Home() {
       <section className="py-20 bg-[var(--color-surface-muted)]">
         <div className="container-x">
           <div className="text-center mb-12">
-            <div className="section-pill mx-auto mb-4">Already in the UK?</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-navy)]">
-              Specialist UK routes
-            </h2>
-            <p className="mt-3 text-[var(--color-text-muted)] max-w-2xl mx-auto">
-              Two tracks designed specifically for students already studying or living in the UK — built around current visa rules.
+            <div className="section-pill mx-auto mb-4 w-fit">
+              <Shield size={13} />
+              Already in the UK?
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)]">Specialist UK routes</h2>
+            <p className="mt-3 text-[var(--color-text-muted)] max-w-xl mx-auto" style={{ fontFamily: "var(--font-inter)" }}>
+              Two tracks built specifically around current UK visa rules — for students already here.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <Link
-              href="/services/uk-2nd-masters"
-              className="group relative overflow-hidden rounded-3xl bg-[var(--color-navy)] text-white p-8 hover:shadow-[var(--shadow-xl)] transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[var(--color-blue)] opacity-20 blur-3xl -z-0" />
-              <div className="relative z-10">
-                <div className="text-3xl mb-5">📚</div>
+            {/* Dark card */}
+            <Link href="/services/uk-2nd-masters"
+              className="group relative overflow-hidden rounded-3xl bg-[var(--color-navy)] text-white p-8 hover:shadow-[var(--shadow-xl)] transition-all duration-300 hover:-translate-y-1 block">
+              <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[var(--color-blue)] opacity-10 blur-3xl" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-[var(--color-action)] opacity-10 blur-2xl" aria-hidden="true" />
+              <div className="relative">
+                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-5">
+                  <BookOpen size={22} className="text-white" />
+                </div>
+                <div className="text-xs font-bold tracking-[0.1em] text-white/50 mb-2 uppercase">Specialist Service</div>
                 <h3 className="text-xl font-bold mb-3">Second Master&apos;s in the UK</h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                <p className="text-white/70 text-sm leading-relaxed mb-6" style={{ fontFamily: "var(--font-inter)" }}>
                   Keep your Graduate Route visa active, switch fields, or stack qualifications. We find the right MSc — not the easiest one.
                 </p>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-white/90 group-hover:gap-3 transition-all">
-                  Explore this route →
-                </span>
+                <div className="flex items-center gap-2 text-sm font-semibold text-white/90 group-hover:gap-3 transition-all">
+                  Explore this route <ArrowRight size={15} />
+                </div>
               </div>
             </Link>
 
-            <Link
-              href="/services/uk-research-dependants"
-              className="group relative overflow-hidden rounded-3xl border-2 border-[var(--color-navy)] bg-white text-[var(--color-navy)] p-8 hover:shadow-[var(--shadow-xl)] hover:bg-[var(--color-navy)] hover:text-white transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="relative z-10">
-                <div className="text-3xl mb-5">👨‍👩‍👧</div>
-                <h3 className="text-xl font-bold mb-3">Research Routes for Families</h3>
-                <p className="text-[var(--color-text-muted)] group-hover:text-white/70 text-sm leading-relaxed mb-6 transition-colors">
-                  MRes, MPhil, PhD options that still allow dependants under post-Jan-2024 UK rules. Bring your spouse and children.
+            {/* Outlined card */}
+            <Link href="/services/uk-research-dependants"
+              className="group relative overflow-hidden rounded-3xl border-2 border-[var(--color-navy)] bg-white p-8 hover:bg-[var(--color-navy)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-xl)] block">
+              <div className="relative">
+                <div className="w-12 h-12 rounded-2xl bg-[var(--color-navy)] group-hover:bg-white/10 flex items-center justify-center mb-5 transition-colors duration-300">
+                  <Users size={22} className="text-white" />
+                </div>
+                <div className="text-xs font-bold tracking-[0.1em] text-[var(--color-text-subtle)] group-hover:text-white/50 mb-2 uppercase transition-colors duration-300">Specialist Service</div>
+                <h3 className="text-xl font-bold mb-3 text-[var(--color-navy)] group-hover:text-white transition-colors duration-300">Research Routes for Families</h3>
+                <p className="text-[var(--color-text-muted)] group-hover:text-white/70 text-sm leading-relaxed mb-6 transition-colors duration-300" style={{ fontFamily: "var(--font-inter)" }}>
+                  MRes, MPhil, PhD options that still allow your spouse and children to join you under post-Jan-2024 UK rules.
                 </p>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-blue)] group-hover:text-white/90 group-hover:gap-3 transition-all">
-                  Explore this route →
-                </span>
+                <div className="flex items-center gap-2 text-sm font-semibold text-[var(--color-blue)] group-hover:text-white/90 group-hover:gap-3 transition-all duration-300">
+                  Explore this route <ArrowRight size={15} />
+                </div>
               </div>
             </Link>
           </div>
@@ -431,14 +429,74 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          FAQ
+          WHY EDONE — Trust signals
       ══════════════════════════════════════════ */}
       <section className="py-20 bg-white">
         <div className="container-x">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="section-pill mb-5 w-fit">
+                <Shield size={13} />
+                Why EdOne?
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)] mb-5">
+                We work for you.<br />Not the universities.
+              </h2>
+              <p className="text-[var(--color-text-muted)] leading-relaxed mb-8" style={{ fontFamily: "var(--font-inter)" }}>
+                Most consultancies earn commission from the universities they recommend. We don&apos;t. Our fee is transparent, disclosed upfront, and paid by you — which means our shortlist is genuinely built around your goals.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { Icon: CheckCircle2, text: "No hidden university commissions — ever" },
+                  { Icon: Clock, text: "Average response time: under 2 hours" },
+                  { Icon: TrendingUp, text: "96% offer rate across all destinations" },
+                  { Icon: Globe, text: "Specialists in 5 countries, not generalists" },
+                  { Icon: Shield, text: "Transparent fee structure — agreed upfront" },
+                ].map(({ Icon, text }) => (
+                  <div key={text} className="flex items-center gap-3 text-sm text-[var(--color-text-muted)]" style={{ fontFamily: "var(--font-inter)" }}>
+                    <CheckCircle2 size={18} className="text-[var(--color-success)] flex-shrink-0" />
+                    {text}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8">
+                <Link href="/about" className="btn btn-secondary gap-2">
+                  About EdOne
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { n: "2,000+", l: "Students placed", Icon: GraduationCap },
+                { n: "96%", l: "Offer rate", Icon: TrendingUp },
+                { n: "40+", l: "Countries served", Icon: Globe },
+                { n: "50+", l: "Partner universities", Icon: Award },
+              ].map(({ n, l, Icon }) => (
+                <div key={l} className="card p-7 text-center hover:border-[var(--color-blue-soft)] hover:shadow-[var(--shadow-md)] transition-all">
+                  <div className="w-11 h-11 rounded-2xl bg-[var(--color-blue-subtle)] flex items-center justify-center mx-auto mb-4">
+                    <Icon size={20} className="text-[var(--color-blue)]" />
+                  </div>
+                  <div className="text-3xl font-extrabold text-[var(--color-navy)] tracking-tight">{n}</div>
+                  <div className="text-sm text-[var(--color-text-muted)] mt-1" style={{ fontFamily: "var(--font-inter)" }}>{l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          FAQ
+      ══════════════════════════════════════════ */}
+      <section className="py-20 bg-[var(--color-surface-muted)]">
+        <div className="container-x">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <div className="section-pill mx-auto mb-4">Common questions</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-navy)]">
+              <div className="section-pill mx-auto mb-4 w-fit">Common questions</div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-navy)]">
                 Frequently asked questions
               </h2>
             </div>
@@ -450,36 +508,32 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           FINAL CTA
       ══════════════════════════════════════════ */}
-      <section className="py-20 bg-[var(--color-surface-muted)]">
+      <section className="py-20 bg-white">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-3xl navy-gradient px-10 py-16 md:px-16 text-white text-center">
-            {/* Background glow */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-[var(--color-blue)] opacity-20 blur-3xl" />
-            <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-[var(--color-action)] opacity-15 blur-3xl" />
+          <div className="relative overflow-hidden rounded-3xl cta-gradient px-10 py-16 md:px-16 text-white text-center">
+            {/* Glows */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-[var(--color-blue)] opacity-15 blur-3xl" aria-hidden="true" />
+            <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-[var(--color-action)] opacity-10 blur-3xl" aria-hidden="true" />
 
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm font-medium mb-6">
-                <span>🎓</span> Free consultation — no commitment
+              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm font-medium mb-6 backdrop-blur-sm">
+                <GraduationCap size={16} />
+                Free consultation · No commitment
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
                 Ready to start your<br className="hidden md:block" /> university journey?
               </h2>
-              <p className="text-white/70 text-lg max-w-xl mx-auto mb-8">
+              <p className="text-white/70 text-lg max-w-xl mx-auto mb-8" style={{ fontFamily: "var(--font-inter)" }}>
                 We&apos;ll tell you exactly what&apos;s realistic for your profile — and how to get there. No cost. No pressure. Just honest advice.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/book" className="btn btn-primary text-base px-7 py-4 bg-white !text-[var(--color-navy)] hover:bg-white/95 shadow-[var(--shadow-lg)]">
-                  Book a Free Consultation →
+                <Link href="/book" className="btn btn-primary gap-2 text-base px-7 py-4 !bg-white !text-[var(--color-navy)] !border-white hover:!bg-white/95 !shadow-[var(--shadow-lg)]">
+                  Book Free Consultation
+                  <ArrowRight size={18} />
                 </Link>
-                <a
-                  href="https://wa.me/447000000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-ghost-white text-base px-7 py-4"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.288.173-1.413-.074-.124-.272-.198-.57-.347zM12.005 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.889-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.892 6.994c-.003 5.45-4.437 9.884-9.887 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.005 0C5.495 0 .195 5.298.193 11.81c0 2.096.547 4.142 1.588 5.945L.057 24l6.412-1.681a11.875 11.875 0 0 0 5.535 1.41h.005c6.508 0 11.806-5.298 11.808-11.81 0-3.156-1.228-6.123-3.461-8.355z"/>
-                  </svg>
+                <a href="https://wa.me/447000000000" target="_blank" rel="noopener noreferrer"
+                  className="btn btn-ghost-white gap-2 text-base px-7 py-4">
+                  <MessageCircle size={18} />
                   WhatsApp Us
                 </a>
               </div>

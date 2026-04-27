@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyMobileBar } from "@/components/StickyMobileBar";
 
-const dmSans = DM_Sans({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -31,14 +37,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${dmSans.variable} h-full antialiased`}>
+    <html lang="en-GB" className={`${poppins.variable} ${inter.variable} h-full antialiased`}>
       <body
         className="min-h-full flex flex-col bg-[var(--color-bg)] text-[var(--color-text)]"
-        style={{ fontFamily: "var(--font-dm-sans, 'DM Sans', sans-serif)" }}
+        style={{
+          fontFamily: "var(--font-inter, 'Inter', sans-serif)",
+        }}
       >
         <Header />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>
