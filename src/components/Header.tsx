@@ -6,35 +6,35 @@ import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X, GraduationCap, Globe, BookOpen, Users, FileText, Award, MapPin } from "lucide-react";
 
 const destinations = [
-  { label: "United Kingdom", flag: "🇬🇧", href: "/study-in/uk", note: "2-yr Graduate Route" },
-  { label: "Australia", flag: "🇦🇺", href: "/study-in/australia", note: "Up to 5-yr PSW" },
-  { label: "Canada", flag: "🇨🇦", href: "/study-in/canada", note: "3-yr PGWP" },
-  { label: "United States", flag: "🇺🇸", href: "/study-in/usa", note: "STEM OPT extension" },
-  { label: "Ireland", flag: "🇮🇪", href: "/study-in/ireland", note: "2-yr stayback" },
+  { label: "United Kingdom", flag: "🇬🇧", href: "/study-in/uk",        note: "2-yr Graduate Route"   },
+  { label: "Australia",      flag: "🇦🇺", href: "/study-in/australia", note: "Up to 5-yr PSW"        },
+  { label: "Canada",         flag: "🇨🇦", href: "/study-in/canada",    note: "3-yr PGWP"             },
+  { label: "United States",  flag: "🇺🇸", href: "/study-in/usa",       note: "STEM OPT extension"    },
+  { label: "Ireland",        flag: "🇮🇪", href: "/study-in/ireland",   note: "2-yr stayback"         },
 ];
 
 const services = [
-  { label: "University Applications", Icon: GraduationCap, href: "/services", note: "End-to-end support" },
-  { label: "UK 2nd Master's", Icon: BookOpen, href: "/services/uk-2nd-masters", note: "Graduate Route" },
-  { label: "Research + Dependants", Icon: Users, href: "/services/uk-research-dependants", note: "Bring your family" },
-  { label: "Student Route Support", Icon: FileText, href: "/services#visa", note: "CAS to eVisa" },
-  { label: "Scholarship Search", Icon: Award, href: "/services#scholarships", note: "Funded opportunities" },
+  { label: "University Applications",  Icon: GraduationCap, href: "/services",                       note: "End-to-end support"  },
+  { label: "UK 2nd Master's",          Icon: BookOpen,      href: "/services/uk-2nd-masters",         note: "Graduate Route"      },
+  { label: "Research + Dependants",    Icon: Users,         href: "/services/uk-research-dependants", note: "Bring your family"   },
+  { label: "Student Route Support",    Icon: FileText,      href: "/services#visa",                   note: "CAS to eVisa"        },
+  { label: "Scholarship Search",       Icon: Award,         href: "/services#scholarships",           note: "Funded opportunities" },
 ];
 
 const gulfStudents = [
-  { label: "Saudi Students", flag: "🇸🇦", href: "/gulf/saudi-arabia", note: "KASP & Aramco scholarships" },
-  { label: "UAE Students", flag: "🇦🇪", href: "/gulf/uae", note: "Ministry & ADEK scholarships" },
-  { label: "Qatari Students", flag: "🇶🇦", href: "/gulf/qatar", note: "QF & MOHESR scholarships" },
-  { label: "Kuwaiti Students", flag: "🇰🇼", href: "/gulf/kuwait", note: "KCO full scholarship" },
-  { label: "Omani Students", flag: "🇴🇲", href: "/gulf/oman", note: "MoHE & PDO scholarships" },
+  { label: "Saudi Students",  flag: "🇸🇦", href: "/gulf/saudi-arabia", note: "KASP & Aramco scholarships" },
+  { label: "UAE Students",    flag: "🇦🇪", href: "/gulf/uae",          note: "Ministry & ADEK scholarships" },
+  { label: "Qatari Students", flag: "🇶🇦", href: "/gulf/qatar",        note: "QF & MOHESR scholarships"   },
+  { label: "Kuwaiti Students",flag: "🇰🇼", href: "/gulf/kuwait",       note: "KCO full scholarship"       },
+  { label: "Omani Students",  flag: "🇴🇲", href: "/gulf/oman",         note: "MoHE & PDO scholarships"    },
 ];
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [destOpen, setDestOpen] = useState(false);
-  const [servOpen, setServOpen] = useState(false);
-  const [gulfOpen, setGulfOpen] = useState(false);
+  const [scrolled, setScrolled]         = useState(false);
+  const [mobileOpen, setMobileOpen]     = useState(false);
+  const [destOpen, setDestOpen]         = useState(false);
+  const [servOpen, setServOpen]         = useState(false);
+  const [gulfOpen, setGulfOpen]         = useState(false);
   const [mobileDestOpen, setMobileDestOpen] = useState(false);
   const [mobileServOpen, setMobileServOpen] = useState(false);
   const [mobileGulfOpen, setMobileGulfOpen] = useState(false);
@@ -51,19 +51,30 @@ export function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  /* Nav link classes based on scroll state */
+  const navLink = scrolled
+    ? "text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)]"
+    : "text-white/80 hover:text-white hover:bg-white/10";
+
+  const chevronColor = scrolled ? "opacity-60" : "opacity-50";
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-[0_1px_24px_rgba(15,23,42,0.08)] border-b border-[var(--color-border)]"
-          : "bg-white border-b border-[var(--color-border)]"
+          ? "bg-white/95 backdrop-blur-md shadow-[0_1px_24px_rgba(9,9,11,0.08)] border-b border-[var(--color-border)]"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container-x flex items-center justify-between h-[68px]">
 
-        {/* Logo */}
+        {/* Logo — white when unscrolled (dark hero), dark when scrolled */}
         <Link href="/" className="flex items-center flex-shrink-0" aria-label="EdOne Group home">
-          <Image src="/logo.png" alt="EdOne Group" width={130} height={36} className="h-9 w-auto" priority />
+          {scrolled ? (
+            <Image src="/logo.png" alt="EdOne Group" width={130} height={36} className="h-9 w-auto" priority />
+          ) : (
+            <Image src="/logo-white.png" alt="EdOne Group" width={130} height={36} className="h-9 w-auto" priority />
+          )}
         </Link>
 
         {/* Desktop nav */}
@@ -72,13 +83,13 @@ export function Header() {
           {/* Destinations */}
           <div className="relative" onMouseEnter={() => setDestOpen(true)} onMouseLeave={() => setDestOpen(false)}>
             <button
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-all duration-150 cursor-pointer"
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${navLink}`}
               aria-expanded={destOpen}
               aria-haspopup="true"
             >
-              <MapPin size={15} className="opacity-70" />
+              <MapPin size={15} className={chevronColor} />
               Destinations
-              <ChevronDown size={14} className={`transition-transform duration-200 opacity-70 ${destOpen ? "rotate-180" : ""}`} />
+              <ChevronDown size={14} className={`transition-transform duration-200 ${chevronColor} ${destOpen ? "rotate-180" : ""}`} />
             </button>
             <div className={`absolute top-full left-0 mt-1.5 w-64 transition-all duration-200 ${destOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
               <div className="bg-white rounded-2xl shadow-[var(--shadow-xl)] border border-[var(--color-border)] p-2">
@@ -101,13 +112,13 @@ export function Header() {
           {/* Services */}
           <div className="relative" onMouseEnter={() => setServOpen(true)} onMouseLeave={() => setServOpen(false)}>
             <button
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-all duration-150 cursor-pointer"
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${navLink}`}
               aria-expanded={servOpen}
               aria-haspopup="true"
             >
-              <GraduationCap size={15} className="opacity-70" />
+              <GraduationCap size={15} className={chevronColor} />
               Services
-              <ChevronDown size={14} className={`transition-transform duration-200 opacity-70 ${servOpen ? "rotate-180" : ""}`} />
+              <ChevronDown size={14} className={`transition-transform duration-200 ${chevronColor} ${servOpen ? "rotate-180" : ""}`} />
             </button>
             <div className={`absolute top-full left-0 mt-1.5 w-72 transition-all duration-200 ${servOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
               <div className="bg-white rounded-2xl shadow-[var(--shadow-xl)] border border-[var(--color-border)] p-2">
@@ -132,13 +143,13 @@ export function Header() {
           {/* Gulf Students */}
           <div className="relative" onMouseEnter={() => setGulfOpen(true)} onMouseLeave={() => setGulfOpen(false)}>
             <button
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-all duration-150 cursor-pointer"
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${navLink}`}
               aria-expanded={gulfOpen}
               aria-haspopup="true"
             >
-              <Globe size={15} className="opacity-70" />
+              <Globe size={15} className={chevronColor} />
               Gulf Students
-              <ChevronDown size={14} className={`transition-transform duration-200 opacity-70 ${gulfOpen ? "rotate-180" : ""}`} />
+              <ChevronDown size={14} className={`transition-transform duration-200 ${chevronColor} ${gulfOpen ? "rotate-180" : ""}`} />
             </button>
             <div className={`absolute top-full left-0 mt-1.5 w-72 transition-all duration-200 ${gulfOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
               <div className="bg-white rounded-2xl shadow-[var(--shadow-xl)] border border-[var(--color-border)] p-2">
@@ -161,27 +172,41 @@ export function Header() {
             </div>
           </div>
 
-          <Link href="/universities" className="px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-all duration-150">
+          <Link href="/universities"
+            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${navLink}`}>
             Universities
           </Link>
-          <Link href="/reviews" className="px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-all duration-150">
+          <Link href="/reviews"
+            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${navLink}`}>
             Reviews
           </Link>
-          <Link href="/about" className="px-3.5 py-2 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-all duration-150">
+          <Link href="/about"
+            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${navLink}`}>
             About
           </Link>
         </nav>
 
         {/* CTA row */}
         <div className="flex items-center gap-2.5">
-          <Link href="/book" className="hidden lg:inline-flex items-center px-4 py-2.5 text-sm font-semibold rounded-[var(--radius-md)] text-[var(--color-navy)] border border-[var(--color-border-strong)] hover:bg-[var(--color-surface-muted)] transition-all duration-150">
+          <Link
+            href="/book"
+            className={`hidden lg:inline-flex items-center px-4 py-2.5 text-sm font-semibold rounded-[var(--radius-md)] transition-all duration-150 ${
+              scrolled
+                ? "text-[var(--color-navy)] border border-[var(--color-border-strong)] hover:bg-[var(--color-surface-muted)]"
+                : "text-white border border-white/30 hover:bg-white/10"
+            }`}
+          >
             Free Consultation
           </Link>
           <Link href="/apply" className="btn btn-primary text-sm px-4 py-2.5 hidden sm:inline-flex">
             Apply Now
           </Link>
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-[var(--color-surface-muted)] transition-colors text-[var(--color-navy)] cursor-pointer"
+            className={`lg:hidden p-2 rounded-lg transition-colors cursor-pointer ${
+              scrolled
+                ? "hover:bg-[var(--color-surface-muted)] text-[var(--color-navy)]"
+                : "hover:bg-white/10 text-white"
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -192,7 +217,11 @@ export function Header() {
       </div>
 
       {/* Mobile menu — full screen overlay */}
-      <div className={`lg:hidden fixed inset-0 top-[68px] z-40 bg-white transition-all duration-300 ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} overflow-y-auto`}>
+      <div
+        className={`lg:hidden fixed inset-0 top-[68px] z-40 bg-white transition-all duration-300 ${
+          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        } overflow-y-auto`}
+      >
         <div className="container-x py-6 space-y-1">
 
           {/* Destinations accordion */}
@@ -268,8 +297,8 @@ export function Header() {
 
           {[
             { href: "/universities", label: "Universities" },
-            { href: "/reviews", label: "Reviews" },
-            { href: "/about", label: "About" },
+            { href: "/reviews",      label: "Reviews"      },
+            { href: "/about",        label: "About"        },
           ].map((item) => (
             <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
               className="block px-4 py-3 rounded-xl text-sm font-semibold text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)] transition-colors">
