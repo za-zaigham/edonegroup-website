@@ -29,6 +29,7 @@ export const NOTION_DBS = {
   OPPORTUNITIES: "34f1fbcc-feea-8168-8898-e64ebf01d850",
   ACCREDITATIONS: "34f1fbcc-feea-8174-b703-e2a6ed628694",
   REVIEWS: "34f1fbcc-feea-8197-84c5-cb761c83d611",
+  CONSULTATIONS: "34f1fbcc-feea-814c-b6e9-cf803b6de8a9",
 } as const;
 
 interface QueryDatabaseOpts {

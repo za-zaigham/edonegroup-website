@@ -5,12 +5,13 @@ import Link from "next/link";
 
 const destinations = ["United Kingdom", "Australia", "Canada", "United States", "Ireland", "Multiple / Not sure yet"];
 const studyLevels = ["Undergraduate", "Postgraduate (Masters)", "Research (MRes / MPhil / PhD)", "Foundation / Pre-Masters", "Not sure yet"];
+const preferredTimes = ["Morning (9am–12pm UK)", "Afternoon (12pm–5pm UK)", "Evening (5pm–8pm UK)", "Flexible / Any time"];
 
 export default function BookPage() {
   const [step, setStep] = useState<"form" | "sent">("form");
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
-    fullName: "", email: "", phone: "", destination: "", studyLevel: "", message: "",
+    fullName: "", email: "", phone: "", destination: "", studyLevel: "", preferredTime: "", message: "",
   });
 
   const set = (k: string, v: string) => setForm((f) => ({ ...f, [k]: v }));
@@ -19,10 +20,10 @@ export default function BookPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      await fetch("/api/apply", {
+      await fetch("/api/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source: "book-consultation" }),
+        body: JSON.stringify(form),
       });
       setStep("sent");
     } catch {
@@ -147,6 +148,19 @@ export default function BookPage() {
                   >
                     <option value="">Select study level…</option>
                     {studyLevels.map((l) => <option key={l} value={l}>{l}</option>)}
+                  </select>
+                </div>
+
+                {/* Preferred time */}
+                <div>
+                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Preferred call time</label>
+                  <select
+                    value={form.preferredTime}
+                    onChange={(e) => set("preferredTime", e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue-soft)] outline-none transition text-sm bg-white"
+                  >
+                    <option value="">Select a time window…</option>
+                    {preferredTimes.map((t) => <option key={t} value={t}>{t}</option>)}
                   </select>
                 </div>
 
