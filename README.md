@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# edonegroup.com — Website
 
-## Getting Started
+Next.js 15 + Tailwind + shadcn-friendly. Deployed on Vercel free tier (London region).
+Notion is the CMS — content pulled via serverless routes.
 
-First, run the development server:
+---
+
+## 1. Local development
 
 ```bash
+cp .env.local.example .env.local       # then fill in NOTION_TOKEN
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The Notion integration token lives only in `.env.local` (never committed) and on Vercel as an Environment Variable.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 2. Deploy to Vercel (one-time setup)
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repo to GitHub:
+   ```bash
+   git add . && git commit -m "Initial scaffold"
+   git branch -M main
+   git remote add origin git@github.com:<your-handle>/edonegroup-website.git
+   git push -u origin main
+   ```
+2. Go to <https://vercel.com/new> → import the GitHub repo.
+3. Framework: **Next.js** (auto-detected). Root directory: project root.
+4. Environment Variables — paste from `.env.local.example`:
+   - `NOTION_TOKEN` (the EdOne integration secret)
+   - `NEXT_PUBLIC_WA_NUMBER`
+   - `NEXT_PUBLIC_TEL_NUMBER`
+   - `NEXT_PUBLIC_SITE_URL` = `https://edonegroup.com`
+5. Deploy. You'll get a `*.vercel.app` URL within ~60s.
+6. In the Vercel project → **Settings → Domains** → add `edonegroup.com` and `www.edonegroup.com`.
+   Vercel will show you the exact A and CNAME records to set.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 3. Point Hostinger DNS to Vercel
 
-## Deploy on Vercel
+In Hostinger hPanel → **Domains → edonegroup.com → DNS / Nameservers → DNS Records**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Type | Name | Value | TTL |
+|------|------|-------|-----|
+| A | `@` | `76.76.21.21` | 14400 |
+| CNAME | `www` | `cname.vercel-dns.com` | 14400 |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Remove any existing A or CNAME for `@` or `www` (if Hostinger pre-populated them).
+Don't touch any other Hostinger site (e.g. `wisegalleria.co.uk`).
+
+SSL is auto-issued by Vercel within a few minutes once DNS resolves.
+
+---
+
+## 4. Project structure
+
+```
+src/
+├── app/
+│   ├── api/apply/route.ts     # POST → writes lead to Notion
+│   ├── globals.css            # design tokens (Mood 2: Soft Tech Minimal)
+│   ├── layout.tsx             # root chrome (header/footer/sticky bar)
+│   └── page.tsx               # home
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   └── StickyMobileBar.tsx
+└── lib/
+    └── notion.ts              # Notion API client + DB IDs
+```
+
+---
+
+## 5. Adding more pages
+
+Each page in `src/app/<slug>/page.tsx`. Use the existing home as the visual reference.
+
+Pages to build (see Notion → 🌐 Website Build Tasks → Phase: "MVP V2 — Content Site (FOCUS)"):
+- `/about`
+- `/services`, `/services/uk-2nd-masters`, `/services/uk-research-dependants`
+- `/study-in/uk` (and australia / canada / usa / ireland)
+- `/universities` + `/universities/[slug]`
+- `/apply`, `/book`, `/contact`
+- `/reviews`
+- `/resources` (blog hub)
+
+Each task in Notion has a complete coder-ready brief — open the task page, hand it to Claude / Cursor / Bolt to implement.
+
+---
+
+## 6. Notion DB IDs (already wired in `src/lib/notion.ts`)
+
+Don't share `NOTION_TOKEN` publicly — it's a credential.
+The integration is named **ClaudeEdOne** in the EdOne Group workspace.
