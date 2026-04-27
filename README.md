@@ -98,3 +98,4 @@ Each task in Notion has a complete coder-ready brief — open the task page, han
 Don't share `NOTION_TOKEN` publicly — it's a credential.
 The integration is named **ClaudeEdOne** in the EdOne Group workspace.
 # edonegroup-website
+# edonegroup-website
