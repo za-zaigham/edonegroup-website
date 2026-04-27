@@ -44,7 +44,7 @@ const latestOffers = [
     desc: "UK government scholarship for future leaders. Fully funded. Open to students from 160+ countries.",
     deadline: "Nov 5, 2025",
     flag: "🇬🇧",
-    link: "/book",
+    link: "/scholarships/chevening",
   },
   {
     tag: "Now Open",
@@ -53,7 +53,7 @@ const latestOffers = [
     desc: "Saudi Arabia's flagship overseas scholarship. Full funding for Saudi nationals at UK universities.",
     deadline: "Ongoing",
     flag: "🇸🇦",
-    link: "/gulf/saudi-arabia",
+    link: "/scholarships/kasp",
   },
   {
     tag: "Now Open",
@@ -62,7 +62,7 @@ const latestOffers = [
     desc: "One of the Gulf's most generous scholarships. Full tuition + £700–900/month for Kuwaiti nationals.",
     deadline: "Ongoing",
     flag: "🇰🇼",
-    link: "/gulf/kuwait",
+    link: "/scholarships/kco",
   },
   {
     tag: "New Intake",
@@ -71,7 +71,7 @@ const latestOffers = [
     desc: "January 2026 intake now open across Business, Engineering, Computer Science, and Life Sciences.",
     deadline: "Jan 2026",
     flag: "🇬🇧",
-    link: "/study-in/uk",
+    link: "/scholarships/manchester-jan-2026",
   },
 ];
 
@@ -129,7 +129,8 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           HERO — dark cinematic, full-bleed image
       ══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden min-h-[92vh] flex items-center">
+      {/* bg-[#05080F] = guaranteed dark even before Unsplash image loads */}
+      <section className="relative overflow-hidden min-h-[92vh] flex items-center bg-[#05080F]">
         {/* Background image + overlay */}
         <div className="absolute inset-0">
           <Image
@@ -316,15 +317,17 @@ export default function Home() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
-                <div className="relative z-10 p-7 w-full">
-                  <div className="flex items-end justify-between">
+                <div className="relative z-10 p-5 sm:p-7 w-full">
+                  <div className="flex flex-wrap items-end justify-between gap-3">
                     <div>
                       <div className="text-4xl mb-2 leading-none">🇬🇧</div>
-                      <h3 className="text-2xl font-extrabold text-white mb-1">United Kingdom</h3>
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1">United Kingdom</h3>
                       <p className="text-white/70 text-sm">2-year Graduate Route · 150+ universities</p>
                     </div>
-                    <div className="flex flex-col items-end gap-2">
-                      <span className="tag-indigo tag text-xs px-3 py-1.5 text-sm font-semibold">Most Popular</span>
+                    <div className="flex flex-col items-end gap-2 shrink-0">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-indigo-600 text-white">
+                        Most Popular
+                      </span>
                       <div className="flex items-center gap-1.5 text-white/80 text-sm font-semibold group-hover:gap-2.5 transition-all">
                         Explore <ArrowRight size={15} />
                       </div>
@@ -725,7 +728,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           FINAL CTA — dark cinematic with image
       ══════════════════════════════════════════ */}
-      <section className="relative py-28 overflow-hidden">
+      <section className="relative py-28 overflow-hidden bg-[#05080F]">
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
