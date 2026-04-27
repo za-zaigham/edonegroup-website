@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyMobileBar } from "@/components/StickyMobileBar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | EdOne Group",
   },
   description:
-    "EdOne Group helps students into universities in the UK, Australia, Canada, USA, and Europe — including specialist UK 2nd-masters and dependant-friendly research routes.",
+    "EdOne Group helps students secure offers at top universities in the UK, Australia, Canada, USA, and Ireland — with honest, personalised counselling. Free consultation.",
   openGraph: {
     type: "website",
     siteName: "EdOne Group",
@@ -38,11 +35,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en-GB"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-[var(--color-bg)] text-[var(--color-text)]">
+    <html lang="en-GB" className={`${dmSans.variable} h-full antialiased`}>
+      <body
+        className="min-h-full flex flex-col bg-[var(--color-bg)] text-[var(--color-text)]"
+        style={{ fontFamily: "var(--font-dm-sans, 'DM Sans', sans-serif)" }}
+      >
         <Header />
         <main className="flex-1 pb-20 md:pb-0">{children}</main>
         <Footer />
