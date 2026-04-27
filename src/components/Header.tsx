@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const destinations = [
@@ -42,11 +43,8 @@ export function Header() {
       <div className="container-x flex items-center justify-between h-16 md:h-[68px]">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 font-bold tracking-tight text-[var(--color-navy)]">
-          <span className="inline-flex w-9 h-9 rounded-xl bg-[var(--color-navy)] text-white items-center justify-center text-sm font-black tracking-tighter">
-            E1
-          </span>
-          <span className="text-[1.05rem]">EdOne<span className="font-normal text-[var(--color-text-muted)]"> Group</span></span>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.png" alt="EdOne Group" width={130} height={36} className="h-9 w-auto" priority />
         </Link>
 
         {/* Desktop nav */}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,12 +8,7 @@ export function Footer() {
 
         {/* Brand */}
         <div className="md:col-span-1">
-          <div className="flex items-center gap-2.5 font-bold">
-            <span className="inline-flex w-9 h-9 rounded-xl bg-white text-[var(--color-navy)] items-center justify-center text-sm font-black">
-              E1
-            </span>
-            <span className="text-[1.05rem]">EdOne Group</span>
-          </div>
+          <Image src="/logo-white.png" alt="EdOne Group" width={130} height={36} className="h-9 w-auto" />
           <p className="mt-4 text-sm text-white/60 leading-relaxed">
             UK-based education consultancy helping students from 40+ countries
             secure offers at top universities worldwide.
