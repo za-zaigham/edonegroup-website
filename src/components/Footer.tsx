@@ -1,6 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 
+/* Quick-win trust signals shown in the accreditations strip */
+const TRUST_BADGES = [
+  { label: "UK Registered Company", icon: "🇬🇧" },
+  { label: "ICO Registered", icon: "🔒" },
+  { label: "Google Reviews 4.9★", icon: "⭐" },
+  { label: "GDPR Compliant", icon: "✅" },
+  { label: "40+ Countries Served", icon: "🌍" },
+  { label: "Free Consultation", icon: "🎓" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-[var(--color-navy)] text-white">
@@ -65,9 +75,25 @@ export function Footer() {
             </li>
             <li><Link href="/book" className="hover:text-white transition">Book Free Consultation</Link></li>
             <li><Link href="/about" className="hover:text-white transition">About EdOne</Link></li>
+            <li><Link href="/universities" className="hover:text-white transition">Universities</Link></li>
             <li><Link href="/reviews" className="hover:text-white transition">Student Reviews</Link></li>
             <li><Link href="/resources" className="hover:text-white transition">Blog &amp; Resources</Link></li>
           </ul>
+        </div>
+      </div>
+
+      {/* Accreditations strip */}
+      <div className="border-t border-white/10">
+        <div className="container-x py-5">
+          <p className="text-xs text-white/30 uppercase tracking-widest mb-4 text-center">Trust &amp; Accreditations</p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            {TRUST_BADGES.map((b) => (
+              <div key={b.label} className="flex items-center gap-2 text-xs text-white/50">
+                <span>{b.icon}</span>
+                <span>{b.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
