@@ -14,10 +14,10 @@ const values = [
 ];
 
 const stats = [
-  { n: "96%",  l: "Offer rate"           },
-  { n: "40+",  l: "Countries served"     },
-  { n: "50+",  l: "Universities worldwide" },
-  { n: "5",    l: "Study destinations"   },
+  { n: "High",  l: "Offer success"         },
+  { n: "40+",   l: "Countries served"      },
+  { n: "UK",    l: "Partner universities"  },
+  { n: "5",     l: "Study destinations"    },
 ];
 
 export default function AboutPage() {
@@ -70,6 +70,9 @@ export default function AboutPage() {
                 </p>
                 <p>
                   We specialise in the UK, Australia, Canada, USA, and Ireland — destinations we know deeply, including the visa rules, university entry requirements, scholarship landscape, and job market outcomes that follow graduation.
+                </p>
+                <p className="text-xs text-[var(--color-text-muted)] italic">
+                  Note on partnerships: we work with UK universities both directly and via authorised partner channels. Where a university is referenced on this site, it does not necessarily imply an exclusive or direct agency agreement — only that we can support applications to it through our network.
                 </p>
               </div>
             </div>

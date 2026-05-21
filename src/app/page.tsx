@@ -195,8 +195,8 @@ export default function Home() {
               <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-6 md:gap-10">
                 {[
                   { n: "40+",  l: "Countries served" },
-                  { n: "96%",  l: "Offer rate"        },
-                  { n: "4.9★", l: "Google rating"     },
+                  { n: "5",    l: "Study destinations" },
+                  { n: "UK",   l: "Education focus" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="text-2xl font-extrabold text-white tracking-tight">{s.n}</div>
@@ -219,8 +219,8 @@ export default function Home() {
                       <Star key={i} size={13} fill="#FBBF24" stroke="none" />
                     ))}
                   </div>
-                  <span className="text-white font-semibold text-sm">4.9 / 5</span>
-                  <span className="text-white/50 text-xs">· 200+ reviews</span>
+                  <span className="text-white font-semibold text-sm">Trusted</span>
+                  <span className="text-white/50 text-xs">· by students worldwide</span>
                 </div>
 
                 {/* Recent results */}
@@ -252,8 +252,8 @@ export default function Home() {
                     <div className="text-xs text-white/60 mt-1">Countries</div>
                   </div>
                   <div className="bg-[rgba(6,182,212,0.12)] border border-[rgba(6,182,212,0.2)] rounded-2xl p-4 text-white text-center">
-                    <div className="text-2xl font-extrabold tracking-tight">96%</div>
-                    <div className="text-xs text-white/60 mt-1">Offer Rate</div>
+                    <div className="text-2xl font-extrabold tracking-tight">High</div>
+                    <div className="text-xs text-white/60 mt-1">Offer Success</div>
                   </div>
                 </div>
               </div>
@@ -667,7 +667,7 @@ export default function Home() {
                 {[
                   { text: "No hidden university commissions — ever" },
                   { text: "Average response time: under 2 hours" },
-                  { text: "96% offer rate across all destinations" },
+                  { text: "Strong offer rates with our partner universities" },
                   { text: "Specialists in 5 countries, not generalists" },
                   { text: "Transparent fee structure — agreed upfront" },
                 ].map(({ text }) => (
@@ -688,9 +688,9 @@ export default function Home() {
             {/* Stats grid */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { n: "96%",  l: "Offer rate",           Icon: TrendingUp   },
+                { n: "High",  l: "Offer success",        Icon: TrendingUp   },
                 { n: "40+",  l: "Countries served",     Icon: Globe        },
-                { n: "50+",  l: "Universities worldwide", Icon: Award        },
+                { n: "UK",   l: "Partner universities", Icon: Award        },
                 { n: "5",    l: "Study destinations",   Icon: GraduationCap },
               ].map(({ n, l, Icon }, i) => (
                 <ScrollReveal key={l} delay={i * 100} direction="scale">
@@ -769,7 +769,7 @@ export default function Home() {
                   <ArrowRight size={18} />
                 </Link>
                 <a
-                  href="https://wa.me/447000000000"
+                  href="https://wa.me/447570985500"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-ghost-white gap-2 text-base px-7 py-4"

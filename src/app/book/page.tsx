@@ -49,7 +49,7 @@ export default function BookPage() {
 
             {/* Trust row */}
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-[var(--color-text-muted)]">
-              {["⚡ Avg. response: 2 hours", "🎓 96% offer rate", "🌍 40+ countries served"].map((t) => (
+              {["⚡ Avg. response: 2 hours", "🎓 Strong offer success", "🌍 40+ countries served"].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">{t}</span>
               ))}
             </div>
@@ -75,7 +75,7 @@ export default function BookPage() {
                 <div className="flex flex-wrap justify-center gap-3">
                   <Link href="/" className="btn btn-secondary px-6 py-3">Back to home</Link>
                   <a
-                    href="https://wa.me/447000000000"
+                    href="https://wa.me/447570985500"
                     target="_blank" rel="noopener noreferrer"
                     className="btn btn-primary px-6 py-3"
                   >
@@ -116,7 +116,7 @@ export default function BookPage() {
                   <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Phone / WhatsApp</label>
                   <input
                     type="tel"
-                    placeholder="+44 7700 000000"
+                    placeholder="Your phone number"
                     value={form.phone}
                     onChange={(e) => set("phone", e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue-soft)] outline-none transition text-sm bg-white"
@@ -199,7 +199,7 @@ export default function BookPage() {
         <div className="container-x text-center">
           <p className="text-[var(--color-text-muted)] mb-4">Prefer to message directly?</p>
           <a
-            href="https://wa.me/447000000000"
+            href="https://wa.me/447570985500"
             target="_blank" rel="noopener noreferrer"
             className="btn inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-whatsapp)] text-white font-semibold text-sm"
           >

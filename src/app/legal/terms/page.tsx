@@ -27,7 +27,8 @@ export default function TermsPage() {
             <p className="text-[var(--color-muted)] leading-relaxed">
               These Terms of Service govern your use of the EdOne Group website (edonegroup.com) and our education
               consultancy services. By using our site or services you agree to these terms. EdOne Group Ltd is a
-              company registered in England and Wales.
+              private limited company registered in England and Wales under company number <strong>17101141</strong>,
+              with its registered office at 163 Silverhill Drive, Newcastle upon Tyne, NE5 2JP, United Kingdom.
             </p>
           </div>
 
@@ -109,8 +110,8 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold mb-3">10. Contact</h2>
             <p className="text-[var(--color-muted)] leading-relaxed">
               Questions about these terms? Email{" "}
-              <a href="mailto:hello@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
-                hello@edonegroup.com
+              <a href="mailto:info@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
+                info@edonegroup.com
               </a>.
             </p>
           </div>

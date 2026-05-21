@@ -126,8 +126,8 @@ export default async function UniversitiesPage() {
             <p className="text-lg font-medium mb-2">University catalog loading…</p>
             <p className="text-sm">
               Reach us at{" "}
-              <a href="mailto:hello@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
-                hello@edonegroup.com
+              <a href="mailto:info@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
+                info@edonegroup.com
               </a>{" "}
               for a personalised university shortlist.
             </p>

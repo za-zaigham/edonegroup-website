@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "EdOne Group supports Omani students from Muscat and Salalah in securing places at leading UK universities. Expert guidance on Ministry of Higher Education scholarships, PDO funding, visas and applications.",
   alternates: {
-    canonical: "https://edonegroup.co.uk/gulf/oman",
+    canonical: "https://edonegroup.com/gulf/oman",
   },
   openGraph: {
     title: "Study in the UK for Omani Students | EdOne Group",
     description:
       "UK university guidance for Omani students — Ministry of Higher Education scholarships, PDO funding, Chevening and Student Route visa support.",
-    url: "https://edonegroup.co.uk/gulf/oman",
+    url: "https://edonegroup.com/gulf/oman",
   },
 };
 
@@ -146,8 +146,8 @@ const data: GulfPageData = {
         "Engineering and science scholarships by PDO for Omani students at UK universities with a focus on petroleum and engineering disciplines.",
       descAr:
         "منح هندسية وعلمية من تنمية نفط عُمان للطلاب العُمانيين في الجامعات البريطانية مع التركيز على تخصصات النفط والهندسة.",
-      coverage: "Full tuition + stipend + guaranteed internship",
-      coverageAr: "رسوم كاملة + راتب شهري + تدريب مضمون",
+      coverage: "Full tuition + stipend + internship opportunities",
+      coverageAr: "رسوم كاملة + راتب شهري + فرص تدريب",
       eligibility: "Engineering/Geoscience students, Omani nationals",
       eligibilityAr: "طلاب الهندسة وعلوم الأرض، المواطنون العُمانيون",
     },

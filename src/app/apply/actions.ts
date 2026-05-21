@@ -72,7 +72,7 @@ export async function submitApplication(
     console.error("Application submission error:", err);
     return {
       status: "error",
-      message: "Something went wrong. Please try again or email us at hello@edonegroup.com",
+      message: "Something went wrong. Please try again or email us at info@edonegroup.com",
     };
   }
 }

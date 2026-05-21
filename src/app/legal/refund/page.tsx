@@ -55,8 +55,8 @@ export default function RefundPage() {
             <h2 className="text-xl font-bold mb-3">How to Request a Refund</h2>
             <p className="text-[var(--color-muted)] leading-relaxed">
               To request a refund, email{" "}
-              <a href="mailto:hello@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
-                hello@edonegroup.com
+              <a href="mailto:info@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
+                info@edonegroup.com
               </a>{" "}
               with your name, the service purchased, and the reason for your request. We will respond within 5
               business days and process any agreed refund within 14 days.

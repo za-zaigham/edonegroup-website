@@ -40,7 +40,7 @@ export function ApplyForm() {
         </div>
         <h2 className="text-2xl font-bold text-[var(--color-text)] mb-3">Application Received!</h2>
         <p className="text-[var(--color-muted)] text-lg mb-8">{state.message}</p>
-        <a href="https://wa.me/447000000000"
+        <a href="https://wa.me/447570985500"
           target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-white"
           style={{ background: "#25D366" }}>
@@ -79,7 +79,7 @@ export function ApplyForm() {
           </label>
           <input
             id="email" name="email" type="email" required autoComplete="email"
-            placeholder="you@example.com"
+            placeholder="name@email.com"
             className="form-input"
           />
         </div>

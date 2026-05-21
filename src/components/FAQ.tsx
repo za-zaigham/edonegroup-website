@@ -17,11 +17,11 @@ const faqs = [
   },
   {
     q: "What makes EdOne different from other consultancies?",
-    a: "We don't work on commission from universities — we work for you. That means our shortlist is genuinely personalised to your goals, not whoever pays us the most. We also have a 96% offer rate because we only apply to universities where your profile is genuinely competitive.",
+    a: "We don't work on commission from universities — we work for you. That means our shortlist is genuinely personalised to your goals, not whoever pays us the most. We also maintain strong offer rates with our partner universities because we only apply where your profile is genuinely competitive.",
   },
   {
     q: "Do you help with visa applications?",
-    a: "Yes, end-to-end. From CAS confirmation through to BRP collection. We walk you through every document, help you prepare for the visa interview if required, and have a team that's up to date on the latest UKVI guidance.",
+    a: "Yes, end-to-end. From CAS confirmation through to arrival in the UK. Since the rollout of the UK eVisa system in 2024–25, student visas are issued digitally and accessed via your UKVI online account — no physical BRP card is produced. We walk you through every document, help you set up and verify your UKVI account, prepare you for the visa interview if required, and keep on top of the latest UKVI guidance.",
   },
   {
     q: "What if I don't meet the standard entry requirements?",

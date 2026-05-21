@@ -17,7 +17,7 @@ const CHANNELS = [
     label: "WhatsApp",
     value: "Chat instantly",
     sub: "Fastest response",
-    href: "https://wa.me/447000000000",
+    href: "https://wa.me/447570985500",
     color: "#25D366",
     bg: "rgba(37,211,102,0.1)",
     border: "rgba(37,211,102,0.25)",
@@ -29,9 +29,9 @@ const CHANNELS = [
       </svg>
     ),
     label: "Email",
-    value: "hello@edonegroup.com",
+    value: "info@edonegroup.com",
     sub: "Reply within 24 h",
-    href: "mailto:hello@edonegroup.com",
+    href: "mailto:info@edonegroup.com",
     color: "#4F46E5",
     bg: "rgba(79,70,229,0.1)",
     border: "rgba(79,70,229,0.25)",
@@ -43,9 +43,9 @@ const CHANNELS = [
       </svg>
     ),
     label: "Phone",
-    value: "+44 700 000 0000",
+    value: "+44 7570 985500",
     sub: "Mon–Fri 9am–6pm BST",
-    href: "tel:+447000000000",
+    href: "tel:+447570985500",
     color: "#06B6D4",
     bg: "rgba(6,182,212,0.1)",
     border: "rgba(6,182,212,0.25)",
@@ -121,6 +121,54 @@ export default function ContactPage() {
             }}>
             Book Free Consultation →
           </Link>
+        </div>
+      </section>
+
+      {/* Founder business card */}
+      <section className="container-x pb-16 max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider"
+            style={{ background: "rgba(79,70,229,0.1)", color: "#4F46E5" }}>
+            Save Our Contact
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text)] mt-3">
+            Hajra&apos;s digital business card
+          </h2>
+          <p className="text-sm text-[var(--color-muted)] mt-2 max-w-lg mx-auto">
+            Save the card to your phone or download our vCard — straight into your contacts.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-5 mb-6">
+          <div className="rounded-2xl border border-[var(--color-border)] overflow-hidden shadow-sm bg-white">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/business-card/card-front.png" alt="EdOne business card — front: Hajra, Founder & Director, British Council Certified Counsellor" className="w-full h-auto block" />
+          </div>
+          <div className="rounded-2xl border border-[var(--color-border)] overflow-hidden shadow-sm bg-[#09090B]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/business-card/card-back.png" alt="EdOne business card — back: +44 7570 985500, info@edonegroup.com, edonegroup.com" className="w-full h-auto block" />
+          </div>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-3">
+          <a href="/business-card/hajra-edone.vcf" download
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white text-sm transition-all duration-200 hover:-translate-y-0.5"
+            style={{ background: "linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%)", boxShadow: "0 6px 20px rgba(79,70,229,0.35)" }}>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />
+            </svg>
+            Save to Contacts (.vcf)
+          </a>
+          <a href="/business-card/card-front.png" download="edone-card-front.png"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm border transition-all duration-200 hover:bg-[var(--color-surface-muted)]"
+            style={{ borderColor: "var(--color-border-strong)", color: "var(--color-text)" }}>
+            Front (PNG)
+          </a>
+          <a href="/business-card/card-back.png" download="edone-card-back.png"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm border transition-all duration-200 hover:bg-[var(--color-surface-muted)]"
+            style={{ borderColor: "var(--color-border-strong)", color: "var(--color-text)" }}>
+            Back (PNG)
+          </a>
         </div>
       </section>
 

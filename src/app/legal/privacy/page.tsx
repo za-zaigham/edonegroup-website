@@ -26,10 +26,11 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-xl font-bold mb-3">1. Who We Are</h2>
             <p className="text-[var(--color-muted)] leading-relaxed">
-              EdOne Group Ltd (&ldquo;EdOne&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a UK-registered education
-              consultancy that helps students secure university admissions. Our registered address is in the United Kingdom.
-              We are committed to protecting your privacy in accordance with the UK General Data Protection Regulation
-              (UK GDPR) and the Data Protection Act 2018.
+              EdOne Group Ltd (&ldquo;EdOne&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a private limited company
+              registered in England and Wales under company number <strong>17101141</strong>, with its registered office at
+              163 Silverhill Drive, Newcastle upon Tyne, NE5 2JP, United Kingdom. We are an education consultancy that helps
+              students secure university admissions. We are committed to protecting your privacy in accordance with the UK
+              General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
             </p>
           </div>
 
@@ -95,8 +96,8 @@ export default function PrivacyPage() {
             </ul>
             <p className="text-[var(--color-muted)] mt-3 leading-relaxed">
               To exercise any right, email us at{" "}
-              <a href="mailto:hello@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
-                hello@edonegroup.com
+              <a href="mailto:info@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
+                info@edonegroup.com
               </a>. We will respond within 30 days.
             </p>
           </div>
@@ -121,7 +122,7 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-xl font-bold mb-3">10. Contact & Complaints</h2>
             <p className="text-[var(--color-muted)] leading-relaxed">
-              For privacy queries: <a href="mailto:hello@edonegroup.com" className="text-[var(--color-blue)] hover:underline">hello@edonegroup.com</a>.
+              For privacy queries: <a href="mailto:info@edonegroup.com" className="text-[var(--color-blue)] hover:underline">info@edonegroup.com</a>.
               You also have the right to complain to the{" "}
               <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[var(--color-blue)] hover:underline">
                 Information Commissioner&apos;s Office (ICO)

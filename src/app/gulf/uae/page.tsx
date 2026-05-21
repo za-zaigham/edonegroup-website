@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "EdOne Group helps Emirati students from Dubai, Abu Dhabi and Sharjah gain entry to leading UK universities. Expert guidance on UAE Ministry scholarships, ADEK funding, Chevening and Student Route visas.",
   alternates: {
-    canonical: "https://edonegroup.co.uk/gulf/uae",
+    canonical: "https://edonegroup.com/gulf/uae",
   },
   openGraph: {
     title: "Study in the UK for Emirati Students | EdOne Group",
     description:
       "UK university guidance for UAE students — Ministry of Education scholarships, ADEK funding, Chevening and Student Route visa support.",
-    url: "https://edonegroup.co.uk/gulf/uae",
+    url: "https://edonegroup.com/gulf/uae",
   },
 };
 

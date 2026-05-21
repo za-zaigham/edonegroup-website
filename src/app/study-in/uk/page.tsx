@@ -118,7 +118,7 @@ export default function StudyInUKPage() {
             ))}
           </div>
           <p className="mt-6 text-center text-sm text-[var(--color-text-muted)]">
-            We work with 50+ UK universities.{" "}
+            We work with a wide network of UK universities — both directly and through authorised partner channels.{" "}
             <Link href="/universities" className="text-[var(--color-blue)] font-semibold hover:underline">
               Browse the full list →
             </Link>

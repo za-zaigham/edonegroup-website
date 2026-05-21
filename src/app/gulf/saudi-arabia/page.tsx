@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "EdOne Group helps Saudi students gain entry to top UK universities. Expert guidance on KASP scholarships, Student Route visas, IELTS requirements and applications from Riyadh, Jeddah and across the Kingdom.",
   alternates: {
-    canonical: "https://edonegroup.co.uk/gulf/saudi-arabia",
+    canonical: "https://edonegroup.com/gulf/saudi-arabia",
   },
   openGraph: {
     title: "Study in the UK for Saudi Students | EdOne Group",
     description:
       "Expert UK university guidance for Saudi students — KASP, Aramco, Chevening scholarships and Student Route visa support.",
-    url: "https://edonegroup.co.uk/gulf/saudi-arabia",
+    url: "https://edonegroup.com/gulf/saudi-arabia",
   },
 };
 

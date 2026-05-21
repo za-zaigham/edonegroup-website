@@ -43,10 +43,9 @@ export default function CookiesPage() {
                 </thead>
                 <tbody className="text-[var(--color-muted)]">
                   {[
-                    ["Essential", "Session management, security, form submission", "No"],
-                    ["Analytics", "Google Analytics 4 — anonymous page-view data", "Yes"],
-                    ["Performance", "Plausible Analytics — cookieless, privacy-first", "No"],
-                    ["Preferences", "Language, theme, and UI preferences", "No"],
+                    ["Essential", "Session management, security, and form submission. Always active.", "No"],
+                    ["Preferences", "Stores your cookie consent choice (localStorage key edone-cookie-consent) and basic UI preferences.", "No"],
+                    ["Analytics", "Not currently in use. If we add analytics in future, they will only load after you accept via the cookie banner.", "Yes"],
                   ].map(([cat, purpose, consent]) => (
                     <tr key={cat} className="border-b border-[var(--color-border)]">
                       <td className="py-3 pr-4 font-medium text-[var(--color-text)]">{cat}</td>
@@ -81,15 +80,22 @@ export default function CookiesPage() {
           </div>
 
           <div>
+            <h2 className="text-xl font-bold mb-3">Your Consent</h2>
+            <p className="text-[var(--color-muted)] leading-relaxed">
+              When you first visit edonegroup.com, a cookie banner asks you to accept or decline non-essential
+              cookies. Your choice is stored locally in your browser (localStorage key{" "}
+              <code className="bg-[var(--color-surface-muted)] px-1.5 py-0.5 rounded text-xs">edone-cookie-consent</code>)
+              so we don&apos;t ask again on every visit. You can clear it any time by clearing your browser&apos;s
+              site data for edonegroup.com.
+            </p>
+          </div>
+
+          <div>
             <h2 className="text-xl font-bold mb-3">Third-Party Services</h2>
             <p className="text-[var(--color-muted)] leading-relaxed">
-              We use Google Analytics 4 (operated by Google LLC) for aggregate usage analytics. Google may set
-              their own cookies — see Google&apos;s{" "}
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
-                className="text-[var(--color-blue)] hover:underline">
-                Privacy Policy
-              </a>{" "}
-              for details. We have enabled IP anonymisation on all GA4 data.
+              We do not currently load any third-party tracking or analytics scripts. If we add tools such as
+              Google Analytics, Meta Pixel, or similar in future, this page will be updated and those scripts
+              will only run after you give explicit consent via the cookie banner.
             </p>
           </div>
 
@@ -98,8 +104,8 @@ export default function CookiesPage() {
             <p className="text-[var(--color-muted)] leading-relaxed">
               We may update this Cookie Policy as our services evolve. Please check this page periodically for
               any changes. Questions? Email{" "}
-              <a href="mailto:hello@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
-                hello@edonegroup.com
+              <a href="mailto:info@edonegroup.com" className="text-[var(--color-blue)] hover:underline">
+                info@edonegroup.com
               </a>.
             </p>
           </div>

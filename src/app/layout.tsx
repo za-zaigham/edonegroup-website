@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyMobileBar } from "@/components/StickyMobileBar";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -49,11 +50,26 @@ const schemaOrg = {
       "@type": "EducationalOrganization",
       "@id": "https://edonegroup.com/#organization",
       "name": "EdOne Group",
+      "legalName": "EDONE GROUP LTD",
       "url": "https://edonegroup.com",
       "logo": "https://edonegroup.com/logo.png",
       "description":
         "UK-based education consultancy helping students from 40+ countries secure university offers worldwide.",
-      "email": "hello@edonegroup.com",
+      "email": "info@edonegroup.com",
+      "telephone": "+44 7570 985500",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "163 Silverhill Drive",
+        "addressLocality": "Newcastle upon Tyne",
+        "postalCode": "NE5 2JP",
+        "addressCountry": "GB"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Companies House",
+        "value": "17101141"
+      },
+      "foundingDate": "2026-03-18",
       "areaServed": "Worldwide",
       "knowsAbout": [
         "UK University Admissions",
@@ -64,7 +80,7 @@ const schemaOrg = {
       "sameAs": [
         "https://www.linkedin.com/company/edonegroup",
         "https://www.instagram.com/edonegroup",
-        "https://wa.me/447000000000",
+        "https://wa.me/447570985500",
       ],
     },
     {
@@ -137,6 +153,7 @@ export default function RootLayout({
         <main className="flex-1 pt-[68px] pb-20 md:pb-0">{children}</main>
         <Footer />
         <StickyMobileBar />
+        <CookieBanner />
       </body>
     </html>
   );

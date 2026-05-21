@@ -1,7 +1,7 @@
 // Mobile-only sticky CTA bar — fixed to bottom of viewport.
 
-const WA_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER ?? "447000000000";
-const TEL_NUMBER = process.env.NEXT_PUBLIC_TEL_NUMBER ?? "+447000000000";
+const WA_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER ?? "447570985500";
+const TEL_NUMBER = process.env.NEXT_PUBLIC_TEL_NUMBER ?? "+447570985500";
 
 export function StickyMobileBar() {
   return (

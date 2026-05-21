@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "EdOne Group guides Qatari students through UK university admissions — Qatar Foundation scholarships, MOHESR funding, Chevening and Student Route visa support. Expert advice for students from Doha and across Qatar.",
   alternates: {
-    canonical: "https://edonegroup.co.uk/gulf/qatar",
+    canonical: "https://edonegroup.com/gulf/qatar",
   },
   openGraph: {
     title: "Study in the UK for Qatari Students | EdOne Group",
     description:
       "UK university guidance for Qatari students — Qatar Foundation, MOHESR scholarships, Chevening and Student Route visa support.",
-    url: "https://edonegroup.co.uk/gulf/qatar",
+    url: "https://edonegroup.com/gulf/qatar",
   },
 };
 

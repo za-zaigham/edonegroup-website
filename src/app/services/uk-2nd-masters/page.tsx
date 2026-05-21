@@ -52,7 +52,7 @@ export default function UK2ndMastersPage() {
                 </Link>
               </div>
               <div className="mt-8 flex flex-wrap gap-5 pt-6 border-t border-[var(--color-border)]">
-                {["Graduate Route specialist", "96% offer rate", "Free consultation"].map((t) => (
+                {["Graduate Route specialist", "Strong offer success", "Free consultation"].map((t) => (
                   <span key={t} className="flex items-center gap-1.5 text-sm text-[var(--color-text-muted)]">
                     <span className="text-[var(--color-success)]">✓</span> {t}
                   </span>

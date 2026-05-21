@@ -91,7 +91,7 @@ export default async function ReviewsPage() {
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-white/50">
             {[
               { icon: "🌍", label: "40+ Countries" },
-              { icon: "⭐", label: "4.9 avg rating" },
+              { icon: "🎓", label: "Trusted advisors" },
               { icon: "🎓", label: "Multiple destinations" },
             ].map((b) => (
               <span key={b.label} className="flex items-center gap-2">

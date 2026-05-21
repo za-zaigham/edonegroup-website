@@ -36,7 +36,7 @@ export default function ApplyPage() {
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-white/50">
             {[
               { icon: "🌍", label: "40+ Countries served" },
-              { icon: "⭐", label: "4.9 Google rating" },
+              { icon: "🎓", label: "Trusted by students worldwide" },
               { icon: "🔒", label: "Your data stays private" },
             ].map((b) => (
               <div key={b.label} className="flex items-center gap-2">

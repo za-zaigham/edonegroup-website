@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "EdOne Group helps Kuwaiti students access top UK universities and maximise their Kuwait Cultural Office (KCO) scholarship options. Expert guidance on admissions, visas and funding from Kuwait.",
   alternates: {
-    canonical: "https://edonegroup.co.uk/gulf/kuwait",
+    canonical: "https://edonegroup.com/gulf/kuwait",
   },
   openGraph: {
     title: "Study in the UK for Kuwaiti Students | EdOne Group",
     description:
       "UK university guidance for Kuwaiti students — KCO scholarships, Kuwait Petroleum Corporation funding, Chevening and Student Route visa support.",
-    url: "https://edonegroup.co.uk/gulf/kuwait",
+    url: "https://edonegroup.com/gulf/kuwait",
   },
 };
 

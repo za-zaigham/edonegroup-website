@@ -166,7 +166,7 @@ export default async function UniversityDetailPage({ params }: { params: Promise
                 {[
                   { label: "Undergraduate degree", value: "2:2 or above (or equivalent)" },
                   { label: "English language", value: "IELTS 6.0+ (or equivalent)" },
-                  { label: "Application deadline", value: "Rolling — apply early for guaranteed intake" },
+                  { label: "Application deadline", value: "Rolling — apply early to secure your preferred intake" },
                 ].map((r) => (
                   <div key={r.label}
                     className="flex justify-between gap-4 py-2.5 border-b border-[var(--color-border)] text-sm">
