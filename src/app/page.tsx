@@ -617,7 +617,7 @@ export default function Home() {
                     <BookOpen size={22} className="text-white" />
                   </div>
                   <div className="text-xs font-bold tracking-[0.1em] text-white/40 mb-2 uppercase">Specialist Service</div>
-                  <h3 className="text-xl font-bold mb-3">Second Master&apos;s in the UK</h3>
+                  <h3 className="text-xl font-bold mb-3 text-white">Second Master&apos;s in the UK</h3>
                   <p className="text-white/70 text-sm leading-relaxed mb-6">
                     Stay on the Graduate Route, switch fields, or stack qualifications. We find the right MSc — not the easiest one.
                   </p>
@@ -757,7 +757,7 @@ export default function Home() {
                 <GraduationCap size={16} />
                 Free consultation · No commitment
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 text-white">
                 Ready to start your
                 <br className="hidden md:block" />
                 <span className="text-gradient"> university journey?</span>
