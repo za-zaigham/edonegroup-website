@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09090B"/>
+      <stop offset="100%" stop-color="#18181B"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <style>
+      .display { font-family: 'Plus Jakarta Sans', 'Helvetica Neue', 'Inter', system-ui, sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+      .body { font-family: 'Inter', 'Helvetica Neue', system-ui, sans-serif; font-weight: 500; }
+      .micro { font-family: 'Inter', 'Helvetica Neue', system-ui, sans-serif; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- ambient gradients -->
+  <circle cx="1080" cy="90" r="220" fill="#4F46E5" opacity="0.22"/>
+  <circle cx="1140" cy="600" r="180" fill="#06B6D4" opacity="0.16"/>
+
+  <!-- left accent bar -->
+  <rect x="0" y="0" width="14" height="630" fill="url(#acc)"/>
+
+  <!-- wordmark -->
+  <text x="80" y="130" class="display" font-size="64" fill="#FAFAFA">EdOne</text>
+  <text x="80" y="168" class="micro" font-size="18" fill="#A1A1AA">Education that opens worlds</text>
+
+  <!-- headline -->
+  <text x="80" y="320" class="display" font-size="76" fill="#FAFAFA">UK &amp; Global</text>
+  <text x="80" y="400" class="display" font-size="76" fill="#FAFAFA">University Admissions</text>
+
+  <!-- accent underline -->
+  <rect x="80" y="430" width="200" height="6" fill="url(#acc)" rx="3"/>
+
+  <!-- sub line -->
+  <text x="80" y="490" class="body" font-size="28" fill="#A1A1AA">Free counselling · Strong offer success · British Council Certified</text>
+
+  <!-- footer line -->
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="#27272A" stroke-width="1"/>
+  <text x="80" y="585" class="body" font-size="22" fill="#FAFAFA">edonegroup.com</text>
+  <text x="1120" y="585" text-anchor="end" class="body" font-size="22" fill="#71717A">+44 7570 985500 · info@edonegroup.com</text>
+</svg>

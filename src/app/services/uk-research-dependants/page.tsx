@@ -113,7 +113,7 @@ export default function ResearchDependantsPage() {
       </section>
 
       {/* Eligible routes */}
-      <section id="routes" className="py-20 bg-white">
+      <section id="routes" className="py-20 bg-white scroll-mt-24">
         <div className="container-x">
           <div className="text-center mb-12">
             <div className="section-pill mx-auto mb-4">Eligible routes</div>

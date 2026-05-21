@@ -239,7 +239,7 @@ export function GulfPage({ data }: { data: GulfPageData }) {
                 {isAr ? "احجز استشارة مجانية" : "Book Free Consultation"}
               </Link>
               <Link
-                href="/study-in"
+                href="/universities"
                 className="btn btn-ghost-white"
                 style={{ borderRadius: "var(--radius-full)" }}
               >

@@ -145,7 +145,7 @@ export default function UK2ndMastersPage() {
       </section>
 
       {/* How EdOne helps */}
-      <section id="how-it-works" className="py-20 bg-white">
+      <section id="how-it-works" className="py-20 bg-white scroll-mt-24">
         <div className="container-x">
           <div className="text-center mb-12">
             <div className="section-pill mx-auto mb-4">Our process</div>

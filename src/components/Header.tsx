@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X, GraduationCap, Globe, BookOpen, Users, FileText, Award, MapPin } from "lucide-react";
 
@@ -39,6 +40,12 @@ export function Header() {
   const [mobileServOpen, setMobileServOpen] = useState(false);
   const [mobileGulfOpen, setMobileGulfOpen] = useState(false);
 
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+  const groupActive = (items: { href: string }[]) =>
+    items.some((i) => isActive(i.href.split("#")[0]));
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -53,6 +60,7 @@ export function Header() {
 
   /* Nav link classes — always white header */
   const navLink = "text-[var(--color-text-muted)] hover:text-[var(--color-navy)] hover:bg-[var(--color-surface-muted)]";
+  const navLinkActive = "text-[var(--color-blue)] bg-[var(--color-blue-subtle)]";
   const chevronColor = "opacity-60";
 
   return (
@@ -70,15 +78,16 @@ export function Header() {
           {/* Destinations */}
           <div className="relative" onMouseEnter={() => setDestOpen(true)} onMouseLeave={() => setDestOpen(false)}>
             <button
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${navLink}`}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${groupActive(destinations) ? navLinkActive : navLink}`}
               aria-expanded={destOpen}
               aria-haspopup="true"
+              aria-current={groupActive(destinations) ? "page" : undefined}
             >
               <MapPin size={15} className={chevronColor} />
               Destinations
               <ChevronDown size={14} className={`transition-transform duration-200 ${chevronColor} ${destOpen ? "rotate-180" : ""}`} />
             </button>
-            <div className={`absolute top-full left-0 mt-1.5 w-64 transition-all duration-200 ${destOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
+            <div className={`absolute top-full left-0 pt-1.5 w-64 transition-all duration-200 ${destOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
               <div className="bg-white rounded-2xl shadow-[var(--shadow-xl)] border border-[var(--color-border)] p-2">
                 {destinations.map((d) => (
                   <Link key={d.href} href={d.href}
@@ -99,15 +108,16 @@ export function Header() {
           {/* Services */}
           <div className="relative" onMouseEnter={() => setServOpen(true)} onMouseLeave={() => setServOpen(false)}>
             <button
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${navLink}`}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${groupActive(services) ? navLinkActive : navLink}`}
               aria-expanded={servOpen}
               aria-haspopup="true"
+              aria-current={groupActive(services) ? "page" : undefined}
             >
               <GraduationCap size={15} className={chevronColor} />
               Services
               <ChevronDown size={14} className={`transition-transform duration-200 ${chevronColor} ${servOpen ? "rotate-180" : ""}`} />
             </button>
-            <div className={`absolute top-full left-0 mt-1.5 w-72 transition-all duration-200 ${servOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
+            <div className={`absolute top-full left-0 pt-1.5 w-72 transition-all duration-200 ${servOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
               <div className="bg-white rounded-2xl shadow-[var(--shadow-xl)] border border-[var(--color-border)] p-2">
                 {services.map(({ label, Icon, href, note }) => (
                   <Link key={href} href={href}
@@ -130,15 +140,16 @@ export function Header() {
           {/* Gulf Students */}
           <div className="relative" onMouseEnter={() => setGulfOpen(true)} onMouseLeave={() => setGulfOpen(false)}>
             <button
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${navLink}`}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${groupActive(gulfStudents) ? navLinkActive : navLink}`}
               aria-expanded={gulfOpen}
               aria-haspopup="true"
+              aria-current={groupActive(gulfStudents) ? "page" : undefined}
             >
               <Globe size={15} className={chevronColor} />
               Gulf Students
               <ChevronDown size={14} className={`transition-transform duration-200 ${chevronColor} ${gulfOpen ? "rotate-180" : ""}`} />
             </button>
-            <div className={`absolute top-full left-0 mt-1.5 w-72 transition-all duration-200 ${gulfOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
+            <div className={`absolute top-full left-0 pt-1.5 w-72 transition-all duration-200 ${gulfOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
               <div className="bg-white rounded-2xl shadow-[var(--shadow-xl)] border border-[var(--color-border)] p-2">
                 {gulfStudents.map((g) => (
                   <Link key={g.href} href={g.href}
@@ -159,16 +170,16 @@ export function Header() {
             </div>
           </div>
 
-          <Link href="/universities"
-            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${navLink}`}>
+          <Link href="/universities" aria-current={isActive("/universities") ? "page" : undefined}
+            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${isActive("/universities") ? navLinkActive : navLink}`}>
             Universities
           </Link>
-          <Link href="/reviews"
-            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${navLink}`}>
+          <Link href="/reviews" aria-current={isActive("/reviews") ? "page" : undefined}
+            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${isActive("/reviews") ? navLinkActive : navLink}`}>
             Reviews
           </Link>
-          <Link href="/about"
-            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${navLink}`}>
+          <Link href="/about" aria-current={isActive("/about") ? "page" : undefined}
+            className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${isActive("/about") ? navLinkActive : navLink}`}>
             About
           </Link>
         </nav>

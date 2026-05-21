@@ -38,8 +38,19 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "EdOne Group",
     locale: "en_GB",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "EdOne Group — UK & Global University Admissions",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
+  },
   robots: { index: true, follow: true },
 };
 
@@ -78,9 +89,8 @@ const schemaOrg = {
         "Scholarship Guidance",
       ],
       "sameAs": [
-        "https://www.linkedin.com/company/edonegroup",
-        "https://www.instagram.com/edonegroup",
         "https://wa.me/447570985500",
+        "https://find-and-update.company-information.service.gov.uk/company/17101141",
       ],
     },
     {

@@ -2,7 +2,7 @@
 # https://edonegroup.com/llms.txt
 
 ## About
-EdOne Group is a UK-based education consultancy that helps students from 40+ countries secure university offers in the UK, Australia, Canada, USA, and Ireland. We specialise in UK postgraduate admissions, including second Master's degrees and research programmes that allow dependants.
+EdOne Group (EDONE GROUP LTD, Company No. 17101141, registered in England and Wales) is a UK-based education consultancy that helps students from 40+ countries secure university offers in the UK, Australia, Canada, USA, and Ireland. We specialise in UK postgraduate admissions, including second Master's degrees and research programmes that allow dependants. Founded by Hajra, a British Council Certified Counsellor.
 
 ## Key pages
 
@@ -24,10 +24,22 @@ EdOne Group is a UK-based education consultancy that helps students from 40+ cou
 
 ### Contact
 - URL: https://edonegroup.com/contact
-- Description: WhatsApp, email, and phone contact options. FAQs about the admissions process.
+- Description: WhatsApp, email, and phone contact options. FAQs about the admissions process. Downloadable digital business card.
+
+### Reviews
+- URL: https://edonegroup.com/reviews
+- Description: Student testimonials and success stories.
+
+### Resources
+- URL: https://edonegroup.com/resources
+- Description: Blog posts, country guides, scholarship list, and study-abroad reference articles.
+
+### Universities
+- URL: https://edonegroup.com/universities
+- Description: Searchable catalog of partner and partner-channel universities.
 
 ## Services
-- /services — full overview of all services
+- /services — full overview of all services (applications, scholarships, visa, 2nd Masters, research routes)
 - /services/uk-2nd-masters — Second Master's degree route in the UK (for students who already hold an MSc/MA)
 - /services/uk-research-dependants — Research-track postgraduate programmes that permit dependants (spouse + children)
 
@@ -45,7 +57,15 @@ EdOne Group is a UK-based education consultancy that helps students from 40+ cou
 - /gulf/kuwait — Kuwait Cultural Office (KCO) scholarship; KPC; Chevening
 - /gulf/oman — Ministry of Higher Education Oman, PDO, Chevening
 
+## Scholarships
+- /scholarships — Scholarship finder hub
+- /scholarships/chevening — Chevening Scholarship guide
+- /scholarships/kasp — King Abdullah Scholarship Program (Saudi Arabia)
+- /scholarships/kco — Kuwait Cultural Office scholarship
+- /scholarships/manchester-jan-2026 — University of Manchester January 2026 intake scholarship
+
 ## Legal
+- /legal — Legal documents index
 - /legal/privacy — Privacy Policy (UK GDPR compliant)
 - /legal/terms — Terms of Service
 - /legal/cookies — Cookie Policy
@@ -53,4 +73,6 @@ EdOne Group is a UK-based education consultancy that helps students from 40+ cou
 
 ## Contact
 - Email: info@edonegroup.com
-- WhatsApp: https://wa.me/447000000000
+- Phone: +44 7570 985500
+- WhatsApp: https://wa.me/447570985500
+- Registered office: 163 Silverhill Drive, Newcastle upon Tyne, NE5 2JP, United Kingdom

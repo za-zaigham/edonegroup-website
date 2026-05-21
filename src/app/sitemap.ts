@@ -34,7 +34,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/gulf/kuwait`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/gulf/oman`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 
+    // Scholarships
+    { url: `${BASE}/scholarships`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/scholarships/chevening`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/scholarships/kasp`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/scholarships/kco`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/scholarships/manchester-jan-2026`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+
+    // Universities catalog
+    { url: `${BASE}/universities`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+
     // Legal
+    { url: `${BASE}/legal`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/legal/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/legal/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/legal/cookies`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },

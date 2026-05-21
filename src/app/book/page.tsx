@@ -10,6 +10,7 @@ const preferredTimes = ["Morning (9am–12pm UK)", "Afternoon (12pm–5pm UK)", 
 export default function BookPage() {
   const [step, setStep] = useState<"form" | "sent">("form");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     fullName: "", email: "", phone: "", destination: "", studyLevel: "", preferredTime: "", message: "",
   });
@@ -19,15 +20,17 @@ export default function BookPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     try {
-      await fetch("/api/book", {
+      const res = await fetch("/api/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
+      if (!res.ok) throw new Error("Request failed");
       setStep("sent");
     } catch {
-      alert("Something went wrong. Please WhatsApp us directly.");
+      setError("Something went wrong. Please WhatsApp us at +44 7570 985500 or email info@edonegroup.com — we'll respond quickly.");
     } finally {
       setLoading(false);
     }
@@ -175,6 +178,14 @@ export default function BookPage() {
                     className="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue-soft)] outline-none transition text-sm bg-white resize-none"
                   />
                 </div>
+
+                {error && (
+                  <div role="alert" aria-live="polite"
+                    className="text-sm rounded-xl px-4 py-3 border"
+                    style={{ background: "rgba(229,41,42,0.06)", borderColor: "rgba(229,41,42,0.3)", color: "var(--color-action)" }}>
+                    {error}
+                  </div>
+                )}
 
                 <button
                   type="submit"
