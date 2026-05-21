@@ -130,13 +130,16 @@ body {
 }
 
 /* Heading defaults live in @layer base so Tailwind utility classes
-   (text-white, text-[var(--color-text)], etc.) can override them. */
+   (text-white, text-[var(--color-text)], etc.) can override them.
+   Color uses `inherit` so headings adopt their parent's text color —
+   this prevents black-on-black bugs when a dark section's parent has
+   text-white but a child heading lacks an explicit color class. */
 @layer base {
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     letter-spacing: -0.025em;
     line-height: 1.15;
-    color: var(--color-navy);
+    color: inherit;
     font-weight: 700;
   }
 }
