@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Universities We Work With — UK, Australia, Canada & More",
   description:
     "Browse universities EdOne Group supports applications to across the UK, Australia, Canada, USA, and Ireland. Filter by destination, tier, and intake.",
+  alternates: { canonical: "https://edonegroup.com/universities" },
 };
 
 function toSlug(name: string) {

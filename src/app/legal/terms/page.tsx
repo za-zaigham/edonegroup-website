@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "EdOne Group's terms and conditions for using our education consultancy services.",
+  alternates: { canonical: "https://edonegroup.com/legal/terms" },
 };
 
 export default function TermsPage() {

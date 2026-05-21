@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Resources — Guides, Scholarships & Country Hubs",
   description:
     "Free study-abroad guides, scholarship databases, visa overviews, and country-specific resources from EdOne Group.",
+  alternates: { canonical: "https://edonegroup.com/resources" },
 };
 
 const SCHOLARSHIP_GUIDES = [

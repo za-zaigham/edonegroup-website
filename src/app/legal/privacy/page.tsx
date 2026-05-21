@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How EdOne Group collects, uses, and protects your personal data.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "https://edonegroup.com/legal/privacy" },
 };
 
 export default function PrivacyPage() {

@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Study in Canada — Universities, PGWP & Student Route Guide",
   description: "Study in Canada: top universities, 3-year Post-Graduate Work Permit, clear PR pathway, and how EdOne gets you an offer.",
+  alternates: { canonical: "https://edonegroup.com/study-in/canada" },
 };
 
 const topUnis = [

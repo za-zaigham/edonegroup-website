@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Study in Australia — Universities, Visas & Post-Study Work",
   description: "Study in Australia: top universities, Student visa process, up to 5-year regional post-study work rights, and how EdOne gets you an offer.",
+  alternates: { canonical: "https://edonegroup.com/study-in/australia" },
 };
 
 const topUnis = [

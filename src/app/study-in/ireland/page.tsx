@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Study in Ireland — Universities, Visas & 2-Year Stayback",
   description: "Study in Ireland: top universities, 2-year Third Level Graduate Programme stayback, EU access, and how EdOne gets you an offer.",
+  alternates: { canonical: "https://edonegroup.com/study-in/ireland" },
 };
 
 const topUnis = [

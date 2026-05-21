@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Research Routes + Dependants — MRes, MPhil, PhD in the UK",
   description: "Since January 2024, only Research-level programmes allow dependants in the UK. EdOne specialises in MRes, MPhil and PhD pathways that let you bring your spouse and children.",
+  alternates: { canonical: "https://edonegroup.com/services/uk-research-dependants" },
 };
 
 const researchRoutes = [

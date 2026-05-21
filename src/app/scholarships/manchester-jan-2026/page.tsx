@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "University of Manchester — January 2026 Intake",
   description:
     "January 2026 intake now open at the University of Manchester. Apply through EdOne Group for Business, Engineering, Computer Science, and Life Sciences programmes.",
+  alternates: { canonical: "https://edonegroup.com/scholarships/manchester-jan-2026" },
 };
 
 const SUBJECTS = [

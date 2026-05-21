@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Study in the UK — Universities, Visas & Graduate Route",
   description: "Everything you need to know about studying in the UK: top universities, Student visa process, Graduate Route post-study work, and how EdOne gets you there.",
+  alternates: { canonical: "https://edonegroup.com/study-in/uk" },
 };
 
 const topUnis = [

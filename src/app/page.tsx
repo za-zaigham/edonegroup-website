@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://edonegroup.com/" },
+};
+
 import {
   ArrowRight, Star, CheckCircle2, Globe, GraduationCap,
   FileText, Users, BookOpen, Award, MessageCircle,

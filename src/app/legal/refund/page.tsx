@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Refund Policy",
   description: "EdOne Group's refund and cancellation policy for education consultancy services.",
+  alternates: { canonical: "https://edonegroup.com/legal/refund" },
 };
 
 export default function RefundPage() {

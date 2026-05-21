@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Scholarships for International Students 2025–26",
   description:
     "Fully funded and partial scholarships for international students — Chevening, KASP, KCO, Commonwealth, and more. Apply through EdOne Group.",
+  alternates: { canonical: "https://edonegroup.com/scholarships" },
 };
 
 const scholarships = [

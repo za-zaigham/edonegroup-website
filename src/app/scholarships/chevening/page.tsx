@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Chevening Scholarships 2025–26 — How to Apply",
   description:
     "Complete guide to Chevening Scholarships — the UK Government's flagship award for future leaders. Eligibility, deadlines, what's covered, and how EdOne can help.",
+  alternates: { canonical: "https://edonegroup.com/scholarships/chevening" },
 };
 
 const COVERED = [

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "King Abdullah Scholarship Programme (KASP) — UK Guide",
   description:
     "Complete guide to the King Abdullah Scholarship Programme for Saudi nationals. What's covered, eligibility, UK university selection, and how EdOne Group supports KASP scholars.",
+  alternates: { canonical: "https://edonegroup.com/scholarships/kasp" },
 };
 
 const COVERED = [

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Contact EdOne Group",
   description:
     "Get in touch with EdOne Group — UK-based education consultancy. WhatsApp, email, or book a free consultation. We respond within 24 hours.",
+  alternates: { canonical: "https://edonegroup.com/contact" },
 };
 
 const CHANNELS = [

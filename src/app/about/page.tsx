@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About EdOne Group — Honest Education Consultancy",
   description: "EdOne Group is a UK-based education consultancy founded to give international students the same honest advice we'd give our own families. Meet our team and mission.",
+  alternates: { canonical: "https://edonegroup.com/about" },
 };
 
 const values = [

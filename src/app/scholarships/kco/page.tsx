@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Kuwait Cultural Office (KCO) Scholarship — UK Guide",
   description:
     "Full guide to the Kuwait Cultural Office scholarship for Kuwaiti students studying in the UK. Living allowance, tuition, eligibility, and how to apply through EdOne Group.",
+  alternates: { canonical: "https://edonegroup.com/scholarships/kco" },
 };
 
 export default function KCOPage() {

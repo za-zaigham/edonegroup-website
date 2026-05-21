@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description: "How EdOne Group uses cookies and similar tracking technologies.",
+  alternates: { canonical: "https://edonegroup.com/legal/cookies" },
 };
 
 export default function CookiesPage() {

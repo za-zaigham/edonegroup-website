@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Study in the USA — Universities, F-1 Visa & OPT Guide",
   description: "Study in the USA: Ivy League and top universities, F-1 student visa, 3-year STEM OPT extension, and how EdOne gets you an offer.",
+  alternates: { canonical: "https://edonegroup.com/study-in/usa" },
 };
 
 const topUnis = [

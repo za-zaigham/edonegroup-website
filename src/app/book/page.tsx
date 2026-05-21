@@ -91,8 +91,8 @@ export default function BookPage() {
                 {/* Name + Email */}
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Full name *</label>
-                    <input
+                    <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5" htmlFor="book-fullName">Full name *</label>
+                    <input id="book-fullName"
                       required
                       type="text"
                       placeholder="Your full name"
@@ -102,8 +102,8 @@ export default function BookPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Email address *</label>
-                    <input
+                    <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5" htmlFor="book-email">Email address *</label>
+                    <input id="book-email"
                       required
                       type="email"
                       placeholder="you@email.com"
@@ -116,8 +116,8 @@ export default function BookPage() {
 
                 {/* Phone */}
                 <div>
-                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Phone / WhatsApp</label>
-                  <input
+                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5" htmlFor="book-phone">Phone / WhatsApp</label>
+                  <input id="book-phone"
                     type="tel"
                     placeholder="Your phone number"
                     value={form.phone}
@@ -128,8 +128,8 @@ export default function BookPage() {
 
                 {/* Destination */}
                 <div>
-                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Where do you want to study? *</label>
-                  <select
+                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5" htmlFor="book-destination">Where do you want to study? *</label>
+                  <select id="book-destination"
                     required
                     value={form.destination}
                     onChange={(e) => set("destination", e.target.value)}
@@ -142,8 +142,8 @@ export default function BookPage() {
 
                 {/* Study level */}
                 <div>
-                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Study level *</label>
-                  <select
+                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5" htmlFor="book-studyLevel">Study level *</label>
+                  <select id="book-studyLevel"
                     required
                     value={form.studyLevel}
                     onChange={(e) => set("studyLevel", e.target.value)}
@@ -156,8 +156,8 @@ export default function BookPage() {
 
                 {/* Preferred time */}
                 <div>
-                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Preferred call time</label>
-                  <select
+                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5" htmlFor="book-preferredTime">Preferred call time</label>
+                  <select id="book-preferredTime"
                     value={form.preferredTime}
                     onChange={(e) => set("preferredTime", e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue-soft)] outline-none transition text-sm bg-white"
@@ -169,8 +169,8 @@ export default function BookPage() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5">Anything else we should know?</label>
-                  <textarea
+                  <label className="block text-sm font-semibold text-[var(--color-navy)] mb-1.5" htmlFor="book-message">Anything else we should know?</label>
+                  <textarea id="book-message"
                     rows={4}
                     placeholder="Your current visa status, academic background, specific goals, timeline…"
                     value={form.message}

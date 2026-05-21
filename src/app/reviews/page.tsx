@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Student Reviews — Real Stories from EdOne Students",
   description:
     "Hear from students across 40+ countries who secured university offers through EdOne Group. Real stories, real outcomes.",
+  alternates: { canonical: "https://edonegroup.com/reviews" },
 };
 
 interface Review {

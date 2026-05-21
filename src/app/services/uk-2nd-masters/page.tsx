@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Second Master's in the UK — Stay on the Graduate Route",
   description: "Already in the UK on a Graduate Route visa? Enrol in a second Master's degree to extend your stay, switch fields, or stack qualifications. EdOne finds the right MSc for your profile.",
+  alternates: { canonical: "https://edonegroup.com/services/uk-2nd-masters" },
 };
 
 const benefits = [

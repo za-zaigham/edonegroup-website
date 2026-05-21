@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Apply Now — Start Your University Journey",
   description:
     "Submit your application to EdOne Group. Tell us your study goals, destination preference, and intake timeline — we'll get back within 24 hours with next steps.",
+  alternates: { canonical: "https://edonegroup.com/apply" },
 };
 
 export default function ApplyPage() {
